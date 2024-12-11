@@ -27,12 +27,10 @@ public class BrowserDriverFactory {
 
         switch (browser) {
             case "chrome":
-
                 driver.set(new ChromeDriver(configChromeOptions()));
                 break;
 
             case "firefox":
-
                 driver.set(new FirefoxDriver());
                 break;
 

@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 import org.openqa.selenium.WebDriver;
 
-import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -19,12 +18,11 @@ public class BaseTest {
 
     @Parameters({ "browser" })
     @BeforeMethod(alwaysRun = true)
-    public void setUp(@Optional("chrome") String browser, ITestContext ctx, Method method) {
-        String testName = ctx.getCurrentXmlTest().getName();
+    public void setUp(@Optional("chrome") String browser,  Method method) {
+        String tafName = "GUI TAF";
 
-        log = LogManager.getLogger(testName);
-        log.info(" ==== Test method name: "+ method.getName() +" ====");
-
+        log = LogManager.getLogger(tafName);
+        log.info(" ==== TEST CASE NAME : "+ method.getName() +" ====");
         BrowserDriverFactory factory = new BrowserDriverFactory(browser, log);
         driver = factory.createDriver();
 
