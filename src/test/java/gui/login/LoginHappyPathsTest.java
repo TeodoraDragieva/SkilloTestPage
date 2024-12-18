@@ -56,7 +56,6 @@ public class LoginHappyPathsTest extends BaseTest {
         String actualLoginActionMSG = loginPage.getLoginActionMessage();
         Assert.assertEquals(actualLoginActionMSG,LOGIN_NOT_SUCCESSFUL_MSG);
 
-
         //Step 6.2. LogOut Button
         //Step 6.3. HomePage navigation bar profile link shown
 

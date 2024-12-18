@@ -14,13 +14,12 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "nav-link-home")
     private WebElement navBarHome;
-
+    @FindBy(id = "nav-link-new-post")
+    private WebElement navBarNewPost;
+    @FindBy(id = "nav-link-profile")
+    private WebElement navBarProfile;
     @FindBy(id = "nav-link-login")
     private WebElement navBarLogin;
-
-
-    String navBarProfileLink_locator = "nav-link-profile";
-    String navBarLogOutButton = "//i[contains(@class,'fas fa-sign-out-alt fa-lg')]/..";
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -41,9 +40,14 @@ public class HomePage extends BasePage {
 
 
     public void clickOnNavBarLogin () {
-        wait.until(ExpectedConditions.visibilityOf(navBarLogin));
-        navBarLogin.click();
+       waitAndClickOnWebElement(navBarLogin);
+    }
 
+    public void clickOnNavBarProfile(){
+        waitAndClickOnWebElement(navBarProfile);
+    }
 
+    public void clickOnNavBarNewPost () {
+       waitAndClickOnWebElement(navBarNewPost);
     }
 }

@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-    final String BASE_URL = "http://training.skillo-bg.com:4300";
+    final String BASE_URL = "http://training.skillo-bg.com:4200";
     WebDriver driver;
     WebDriverWait wait;
     Logger log;
@@ -43,7 +43,7 @@ public class BasePage {
     public void navigateTo(String pageURLSuffix) {
         String currentURL = BASE_URL + pageURLSuffix;
 
-        driver.get(currentURL);
+        driver.get(currentURL.toLowerCase());
         log.info("CONFIRM # The user has navigated to: " +currentURL);
 
         waitPageTobeFullyLoaded();

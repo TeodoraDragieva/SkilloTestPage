@@ -1,20 +1,50 @@
 package gui.e2e;
 
-public class VerifyUserCanRegisterLoginUpdateProfilePost {
+import com.n3qa.POM.*;
+import gui.base.BaseTest;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
+import java.io.File;
 
-    //1 Register new user
+public class VerifyUserCanRegisterLoginUpdateProfilePost extends BaseTest {
 
-    //2 Login with newly created user
+    @Test
+    public void basicEndToEnd() throws InterruptedException {
+        String testUser = "testingDemos";
+        String testPassword = "testing";
+        File postPicture = new File("src/test/resources/upload/n3Test.jpg");
+        String caption = "Testing the create post caption";
 
-    //3 Update some profile info
+        HomePage homePage = new HomePage(super.driver, log);
+        homePage.openHomePage();
+        homePage.clickOnNavBarLogin();
 
-    //4 Create new post
+        LoginPage loginPage = new LoginPage(super.driver, log);
+        loginPage.provideUserName(testUser);
+        loginPage.providePassword(testPassword);
+        loginPage.clickOnLoginButton();
 
-    //5 Like new post
+        homePage.clickOnNavBarNewPost();
+        PostPage postPage = new PostPage(super.driver, log);
 
-    //6 Delete new post
+        postPage.uploadPicture(postPicture);
 
+        postPage.providePostCaption(caption);
+        postPage.clickCreatePostButton();
+
+        ProfilePage profilePage = new ProfilePage(super.driver, log);
+        boolean isMorePostShown = profilePage.getPostCount() > 0;
+        Assert.assertTrue(isMorePostShown);
+        profilePage.clickPost(0);
+
+        PostModal postModal = new PostModal(super.driver, log);
+        Assert.assertTrue(postModal.isImageVisible(), "The image is not visible!");
+
+        String postUserTxt = postModal.getPostUser();
+        Assert.assertEquals(postUserTxt, testUser);
+
+    }
 
 
 }
