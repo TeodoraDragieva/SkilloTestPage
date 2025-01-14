@@ -1,74 +1,75 @@
 package gui.login;
 
-import com.n3qa.POM.HomePage;
-import com.n3qa.POM.LoginPage;
+import com.td.POM.HomePage;
+import com.td.POM.LoginPage;
 import gui.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static com.td.POM.HomePage.HOME_PAGE_URL;
 
 public class LoginHappyPathsTest extends BaseTest {
 
     private static final String LOGIN_FORM_TITLE = "Sign in";
     public static final String LOGIN_SUCCESSFUL_MSG = "Successful login!";
-    public static final String LOGIN_NOT_SUCCESSFUL_MSG = "Wrong username or password!";
-
 
     @Test
-    public void verifyTheUserCannotLoginWithInvalidCredentials() throws InterruptedException {
+    public void verifyTheUserCanLoginWithValidCredentials() throws InterruptedException {
 
         HomePage homePage = new HomePage(super.driver, log);
-
         log.info("STEP 1: Not logged in user has opened the Skillo HomePage.");
         homePage.openHomePage();
 
-        log.info("STEP 1.1.Verify the user is on the home page ");
-        //To do
-        // create a method in home page that will check the :
-        // 1.1.1. Page Title
-        // 1.1.2. Verify the nav bar login link is shown
-        log.info("STEP 1.1.2. Verify that the login link is presented ");
+        log.info("STEP 1.1.: Verify the user is on the Home Page.");
+
+        log.info("STEP 1.1.1.: Verify the Page Title.");
+        boolean isTitleCorrect = homePage.isPageTitleCorrect();
+        Assert.assertTrue(isTitleCorrect, "Page title is incorrect!");
+
+        log.info("STEP 1.1.2.: Verify that the Navigation Bar Home is presented.");
+        boolean isShownNavBarHome = homePage.isNavBarHomeShown();
+        Assert.assertTrue(isShownNavBarHome);
+
+        log.info("STEP 1.1.3.: Verify that the Login link is presented.");
         boolean isShownNavBarLoginLink = homePage.isNavLoginShown();
         Assert.assertTrue(isShownNavBarLoginLink);
 
-        log.info("STEP 2: The use is navigating to the login page via click on navigation bar login link");
+        log.info("STEP 2: The user is navigating to the Login page via click on navigation bar Login link.");
         homePage.clickOnNavBarLogin();
 
-        //Step 2.1. Verify the user is on login page
-        log.info("STEP 2.1.: The user is successfully on the login page");
+        log.info("STEP 2.1.: Verify the User is successfully landed on the Login Page");
         LoginPage loginPage = new LoginPage(super.driver,log);
         String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
-        //Step 3. Provide username
-        log.info("STEP 3. Provide username");
-        loginPage.provideUserName(" ");
+        log.info("STEP 3.: Provide username and clicking on ");
+        loginPage.provideUserName("tedi_dr_90@abv.bg");
 
-        //Step 4. Provide password
-        log.info("STEP 4. Provide password");
-        loginPage.providePassword(" ");
+        log.info("STEP 4.: Provide password");
+        loginPage.providePassword("pukankii2");
 
-        //Step 5. Click on login submit button
-        log.info("STEP 4. Click on loginButton");
+        log.info("STEP 5. Click on loginButton");
         loginPage.clickOnLoginButton();
 
-        //Step 6. Verify successful flow
-        //Step 6.1. Success message
+        log.info("STEP 6.: Verify the Login is successful");
+
+        log.info("STEP 6.1.: Verify the Message for Successful Login");
         String actualLoginActionMSG = loginPage.getLoginActionMessage();
-        Assert.assertEquals(actualLoginActionMSG,LOGIN_NOT_SUCCESSFUL_MSG);
+        Assert.assertEquals(actualLoginActionMSG,LOGIN_SUCCESSFUL_MSG);
 
-        //Step 6.2. LogOut Button
-        //Step 6.3. HomePage navigation bar profile link shown
+        log.info("STEP 6.2.: Verify the Log out Button is presented");
+        boolean isShownLogoutButton = loginPage.isLogoutButtonShown();
+        Assert.assertTrue(isShownLogoutButton);
 
+        log.info("STEP 6.3.: Verify the Navigation bar Profile Link is presented");
+        boolean isNavBarProfileShown = homePage.isNavBarProfilePresented();
+        Assert.assertTrue(isNavBarProfileShown);
 
-
-
-        Thread.sleep(4444);
-
-
+        log.info("STEP 6.4.: Verify the current URL is for Home Page.");
+        boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_URL);
+        Assert.assertTrue(isHomePageLoaded);
     }
-   //1. Login with already registered user - valid credentials
+
 
    //2. Login with newly created/registered user - valid credentials
-
-
 }

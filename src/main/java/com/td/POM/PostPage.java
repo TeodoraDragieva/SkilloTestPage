@@ -1,6 +1,7 @@
-package com.n3qa.POM;
+package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.io.File;
 
 public class PostPage extends BasePage {
-    final String POST_PAGE_URL = "http://training.skillo-bg.com:4200/posts/create";
+
+    final String POST_PAGE_URL = "http://training.skillo-bg.com:4300/posts/create";
+
     @FindBy(css = "img.image-preview")
     private WebElement image;
     @FindBy(css = "input.input-lg")
@@ -21,6 +24,9 @@ public class PostPage extends BasePage {
     private WebElement captionElement;
     @FindBy(id = "create-post")
     private WebElement createPostButton;
+    @FindBy (css = "h3.text-center")
+    private WebElement uploadFormHeaderTitle;
+
 
     public PostPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -63,4 +69,10 @@ public class PostPage extends BasePage {
         createPostButton.click();
         log.info("CONFIRMATION # The user has clicked on the submit post button.");
     }
+
+    public String getUploadPageFormTitle(){
+        wait.until(ExpectedConditions.visibilityOf(uploadFormHeaderTitle));
+        return uploadFormHeaderTitle.getText();
+    }
+
 }

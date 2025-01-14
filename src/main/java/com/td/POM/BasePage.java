@@ -1,4 +1,4 @@
-package com.n3qa.POM;
+package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
-    final String BASE_URL = "http://training.skillo-bg.com:4200";
+    final String BASE_URL = "http://training.skillo-bg.com:4300";
     WebDriver driver;
     WebDriverWait wait;
     Logger log;
@@ -35,6 +35,7 @@ public class BasePage {
 
         waitPageTobeFullyLoaded();
     }
+
 
     public String requestedUrl(String pageSuffix ) {
         return BASE_URL+pageSuffix;

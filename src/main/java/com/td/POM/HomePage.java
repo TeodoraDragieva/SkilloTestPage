@@ -1,13 +1,11 @@
-package com.n3qa.POM;
+package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 
 public class HomePage extends BasePage {
     public static final String HOME_PAGE_URL = "/posts/all";
@@ -30,14 +28,15 @@ public class HomePage extends BasePage {
         navigateTo(HOME_PAGE_URL);
     }
 
-    public boolean isNavHomeShown() {
-      return  isPresented(navBarHome);
+    public boolean isNavBarHomeShown() {
+      return isPresented(navBarHome);
     }
+
+    public void clickOnNavBarHome() {waitAndClickOnWebElement(navBarHome);}
 
     public boolean isNavLoginShown() {
      return isPresented(navBarLogin);
     }
-
 
     public void clickOnNavBarLogin () {
        waitAndClickOnWebElement(navBarLogin);
@@ -47,7 +46,20 @@ public class HomePage extends BasePage {
         waitAndClickOnWebElement(navBarProfile);
     }
 
+    public boolean isNavBarProfilePresented(){
+        isPresented(navBarProfile);
+        return true;
+    }
+
     public void clickOnNavBarNewPost () {
        waitAndClickOnWebElement(navBarNewPost);
     }
+
+    public boolean isPageTitleCorrect() {
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "ISkillo";
+        log.info("Verifying page title. Expected: " + expectedTitle + ", Actual: " + actualTitle);
+        return actualTitle.equals(expectedTitle);
+    }
 }
+

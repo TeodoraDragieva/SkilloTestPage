@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="71.22" tests="7" errors="0" skipped="0" failures="2">
+  <properties>
+    <property name="java.specification.version" value="23"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\target\test-classes;C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\target\classes;C:\Users\Teddy\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Teddy\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Teddy\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Teddy\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\Teddy\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\Teddy\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Teddy\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Teddy\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Teddy\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\Teddy\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\Teddy\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\Teddy\.m2\repository\net\bytebuddy\byte-buddy\1.15.1\byte-buddy-1.15.1.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.1\log4j-api-2.11.1.jar;C:\Users\Teddy\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\Teddy\.m2\repository\commons-io\commons-io\2.17.0\commons-io-2.17.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Sofia"/>
+    <property name="user.country.format" value="BG"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="23"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
+    <property name="sun.java.command" value="C:\Users\Teddy\AppData\Local\Temp\surefire3379835245255124062\surefirebooter-20250112010437013_3.jar C:\Users\Teddy\AppData\Local\Temp\surefire3379835245255124062 2025-01-12T01-04-36_572-jvmRun1 surefire-20250112010437013_1tmp surefire_0-20250112010437013_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\target\test-classes;C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\target\classes;C:\Users\Teddy\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\Teddy\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Teddy\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\Teddy\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\Teddy\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\Teddy\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Teddy\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Teddy\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Teddy\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\Teddy\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\Teddy\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\Teddy\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\Teddy\.m2\repository\net\bytebuddy\byte-buddy\1.15.1\byte-buddy-1.15.1.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\Teddy\.m2\repository\org\apache\logging\log4j\log4j-api\2.11.1\log4j-api-2.11.1.jar;C:\Users\Teddy\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\Teddy\.m2\repository\commons-io\commons-io\2.17.0\commons-io-2.17.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Teddy"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-09-17"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-23"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Teddy\AppData\Local\Temp\surefire3379835245255124062\surefirebooter-20250112010437013_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="23+37-2369"/>
+    <property name="user.name" value="Teddy"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Teddy\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Teddy\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2024.2.3"/>
+    <property name="java.version" value="23"/>
+    <property name="user.dir" value="C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.language.format" value="bg"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\Java\jdk-23\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Teddy\AppData\Local\Microsoft\WindowsApps;C:\Users\Teddy\AppData\Local\GitHubDesktop\bin;C:\Users\Teddy\AppData\Roaming\npm;C:\Users\Teddy\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="23+37-2369"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="67.0"/>
+  </properties>
+  <testcase name="basicEndToEnd" classname="gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost" time="7.749">
+    <failure message="invalid argument: File not found : C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\src\test\resources\upload\n3Test.jpg&#10;  (Session info: chrome=131.0.6778.205)&#10;Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [94f8f4936cce7af8b67453e5d809a264, sendKeysToElement {value=[Ljava.lang.CharSequence;@3f93e4a8, id=f.B315154FCED5D970AA467F4CB32F4285.d.C8049303E1957C4F9679C6A5762FB97D.e.48}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53857}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53857/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on windows (94f8f4936cce7af8b67453e5d809a264)] -&gt; css selector: .file[type=&apos;file&apos;]]&#10;Session ID: 94f8f4936cce7af8b67453e5d809a264" type="org.openqa.selenium.InvalidArgumentException"><![CDATA[org.openqa.selenium.InvalidArgumentException: 
+invalid argument: File not found : C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\src\test\resources\upload\n3Test.jpg
+  (Session info: chrome=131.0.6778.205)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [94f8f4936cce7af8b67453e5d809a264, sendKeysToElement {value=[Ljava.lang.CharSequence;@3f93e4a8, id=f.B315154FCED5D970AA467F4CB32F4285.d.C8049303E1957C4F9679C6A5762FB97D.e.48}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53857}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53857/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (94f8f4936cce7af8b67453e5d809a264)] -> css selector: .file[type='file']]
+Session ID: 94f8f4936cce7af8b67453e5d809a264
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
+	at com.td.POM.PostPage.uploadPicture(PostPage.java:51)
+	at gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost.basicEndToEnd(VerifyUserCanRegisterLoginUpdateProfilePost.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]></failure>
+    <system-out><![CDATA[____________________________________________________________
+Deleting not needed files from folder with path: src/test/resources/reports/
+Unable to delete the files in Directory: src/test/resources/reports/
+____________________________________________________________
+____________________________________________________________
+Deleting not needed files from folder with path: src/test/resources/screenshots/
+Unable to delete the files in Directory: src/test/resources/screenshots/
+____________________________________________________________
+[main] 01:04:38,609 INFO  [Teodora TAF]  ==== TEST CASE NAME : basicEndToEnd ====
+[main] 01:04:38,613 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:04:41,151 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 01:04:41,539 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:41,576 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:41,764 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:41,780 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:42,728 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  CSS SELECTOR LOCATOR EXPRESSION:  .file[type='file']]
+[main] 01:04:48,028 ERROR [Teodora TAF] # NOT SHOWN ! # Web element is NOT shown with locator infoLOCATOR STRATEGY BY:  CSS SELECTOR LOCATOR EXPRESSION:  .file[type='file']]
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+яну 12, 2025 1:04:40 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCannotLoginWithWrongUserName" classname="gui.login.LoginNegativePathsTest" time="1.761">
+    <system-out><![CDATA[[main] 01:04:48,197 INFO  [Teodora TAF] Close driver
+[main] 01:04:48,400 INFO  [Teodora TAF]  ==== TEST CASE NAME : verifyUserCannotLoginWithWrongUserName ====
+[main] 01:04:48,400 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:04:49,736 INFO  [Teodora TAF] STEP 1: Already registered user is landing Iskilo loginpage
+[main] 01:04:50,560 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 01:04:50,567 INFO  [Teodora TAF] STEP 1.1.Verify the user is on the Login page
+[main] 01:04:50,572 INFO  [Teodora TAF] Verifying page title. Expected: ISkillo, Actual: ISkillo
+[main] 01:04:50,572 INFO  [Teodora TAF] STEP 1.1.2. Verify that the Login Form is presented
+[main] 01:04:50,662 INFO  [Teodora TAF] STEP 3. Provide username
+[main] 01:04:50,682 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:50,713 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:50,922 INFO  [Teodora TAF] STEP 4. Provide password
+[main] 01:04:50,929 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:50,952 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:51,067 INFO  [Teodora TAF] STEP 5. Click on loginButton
+[main] 01:04:51,187 INFO  [Teodora TAF] STEP 6.1. Verify the Login is successful
+[main] 01:04:51,417 INFO  [Teodora TAF] STEP 6.1.2. Verify that the Login Form is presented
+[main] 01:04:51,463 INFO  [Teodora TAF] STEP 6.1.3. Verify that the Login Button From Login Form is presented
+[main] 01:04:51,467 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  sign-in-button]
+[main] 01:04:51,487 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  sign-in-button]
+[main] 01:04:51,487 INFO  [Teodora TAF] STEP 6.1.3. Verify that the User is still on the Login Page.
+]]></system-out>
+    <system-err><![CDATA[яну 12, 2025 1:04:49 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyLoginPageLayout" classname="gui.login.LoginPageLayoutTest" time="0.85">
+    <system-out><![CDATA[[main] 01:04:51,497 INFO  [Teodora TAF] Close driver
+[main] 01:04:51,658 INFO  [Teodora TAF]  ==== TEST CASE NAME : verifyLoginPageLayout ====
+[main] 01:04:51,658 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:04:53,572 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+]]></system-out>
+    <system-err><![CDATA[яну 12, 2025 1:04:52 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanCreatePost" classname="gui.post.PostTests" time="10.688">
+    <system-out><![CDATA[[main] 01:04:53,591 INFO  [Teodora TAF] Close driver
+[main] 01:04:53,775 INFO  [Teodora TAF]  ==== TEST CASE NAME : verifyUserCanCreatePost ====
+[main] 01:04:53,775 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:04:55,595 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 01:04:55,920 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:55,946 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:56,196 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:56,211 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:04:57,121 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  CSS SELECTOR LOCATOR EXPRESSION:  .file[type='file']]
+[main] 01:05:02,371 ERROR [Teodora TAF] # NOT SHOWN ! # Web element is NOT shown with locator infoLOCATOR STRATEGY BY:  CSS SELECTOR LOCATOR EXPRESSION:  .file[type='file']]
+[main] 01:05:02,399 INFO  [Teodora TAF] CONFIRMATION # The file was successfully uploaded.
+[main] 01:05:02,564 INFO  [Teodora TAF] CONFIRMATION # The user has provided caption text: Testing the create post caption
+[main] 01:05:02,637 INFO  [Teodora TAF] CONFIRMATION # The user has clicked on the submit post button.
+]]></system-out>
+    <system-err><![CDATA[яну 12, 2025 1:04:54 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanDislikePost" classname="gui.post.PostTests" time="29.396">
+    <failure message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[contains(@aria-label,&apos;Post disliked&apos;)]&apos; (tried for 5 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(@aria-label,'Post disliked')]' (tried for 5 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.td.POM.ProfilePage.isDislikeMessageVisible(ProfilePage.java:114)
+	at gui.post.PostTests.verifyUserCanDislikePost(PostTests.java:101)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@aria-label,'Post disliked')]"}
+  (Session info: chrome=131.0.6778.205)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [da678df95d8baf8d07c981d81a21b909, findElement {using=xpath, value=//div[contains(@aria-label,'Post disliked')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54000}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54000/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da678df95d8baf8d07c981d81a21b909
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 32 more
+]]></failure>
+    <system-out><![CDATA[[main] 01:05:05,507 INFO  [Teodora TAF] Close driver
+[main] 01:05:05,847 INFO  [Teodora TAF]  ==== TEST CASE NAME : verifyUserCanDislikePost ====
+[main] 01:05:05,847 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:05:07,912 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/posts/all
+[main] 01:05:08,381 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:08,412 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:08,602 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:08,617 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:08,947 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  nav-link-home]
+[main] 01:05:08,967 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  nav-link-home]
+[main] 01:05:09,124 INFO  [Teodora TAF] The User In the Public Page
+[main] 01:05:11,349 INFO  [Teodora TAF] The User is in the Other User Profile - Lora
+[main] 01:05:12,057 INFO  [Teodora TAF] The user has clicked on the first post of the Other User.
+[main] 01:05:12,057 INFO  [Teodora TAF] The user has clicked on the like button.
+]]></system-out>
+    <system-err><![CDATA[яну 12, 2025 1:05:06 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanDeletePost" classname="gui.post.PostTests" time="3.094">
+    <system-out><![CDATA[[main] 01:05:36,677 INFO  [Teodora TAF] Close driver
+[main] 01:05:36,907 INFO  [Teodora TAF]  ==== TEST CASE NAME : verifyUserCanDeletePost ====
+[main] 01:05:36,907 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:05:38,472 INFO  [Teodora TAF] The user has navigated to the Login page.
+[main] 01:05:39,322 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/login
+[main] 01:05:39,327 INFO  [Teodora TAF] The user has logged in with username and password.
+[main] 01:05:39,338 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:39,357 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:39,527 INFO  [Teodora TAF] ACTION @ The user is verifying if the web element with locator info: LOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:39,547 INFO  [Teodora TAF] # SHOWN  # Web element is shown with locator infoLOCATOR STRATEGY BY:  ID LOCATOR EXPRESSION:  defaultLoginFormUsername]
+[main] 01:05:39,789 INFO  [Teodora TAF] The user has navigated to the Profile page.
+[main] 01:05:41,139 INFO  [Teodora TAF] The user has clicked on the first post.
+[main] 01:05:41,287 INFO  [Teodora TAF] The user has clicked on the Delete post button.
+[main] 01:05:41,395 INFO  [Teodora TAF] The user has confirmed the deletion.
+[main] 01:05:41,560 INFO  [Teodora TAF] CONFIRMATION # The Post Deleted! message is displayed.
+[main] 01:05:41,560 INFO  [Teodora TAF] The user has confirmed the deletion.
+]]></system-out>
+    <system-err><![CDATA[яну 12, 2025 1:05:38 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyUserCanRegisterWithValidData" classname="gui.registration.RegistrationHappyPath" time="5.312">
+    <system-out><![CDATA[[main] 01:05:41,561 INFO  [Teodora TAF] Close driver
+[main] 01:05:41,740 INFO  [Teodora TAF]  ==== TEST CASE NAME : verifyUserCanRegisterWithValidData ====
+[main] 01:05:41,740 INFO  [Teodora TAF] Create driver: chrome
+[main] 01:05:43,717 INFO  [Teodora TAF] CONFIRM # The user has navigated to: http://training.skillo-bg.com:4300/users/register
+]]></system-out>
+    <system-err><![CDATA[яну 12, 2025 1:05:42 ПР.ОБ. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 131, returning the closest version; found: 129; Please update to a Selenium version that supports CDP version 131
+]]></system-err>
+  </testcase>
+</testsuite>

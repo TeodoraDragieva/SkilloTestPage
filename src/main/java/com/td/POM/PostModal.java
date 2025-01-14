@@ -1,9 +1,8 @@
-package com.n3qa.POM;
+package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 
 public class PostModal extends BasePage{
     private final WebElement modalElement;
@@ -13,7 +12,7 @@ public class PostModal extends BasePage{
     }
     public boolean isImageVisible() {
         try {
-            WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img img"));
+            WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img"));
             return wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
         } catch (NoSuchElementException e) {
             e.printStackTrace();

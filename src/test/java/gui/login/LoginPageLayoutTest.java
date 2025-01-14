@@ -1,14 +1,14 @@
 package gui.login;
 
-import com.n3qa.POM.LoginPage;
+import com.td.POM.LoginPage;
 import gui.base.BaseTest;
 import org.testng.annotations.Test;
 
 public class LoginPageLayoutTest extends BaseTest {
 
     @Test
-    public void verifyLoginPageLayout(){
-        LoginPage loginPage = new LoginPage(super.driver,log);
+    public void verifyLoginPageLayout() {
+        LoginPage loginPage = new LoginPage(super.driver, log);
         loginPage.navigateToLoginPage();
 
         // Login page Title
@@ -19,7 +19,8 @@ public class LoginPageLayoutTest extends BaseTest {
 
         //Login page remember me
 
-        //Login page -> link to registration page
+        //Login page -> link to registration pagе
+
     }
 
 }

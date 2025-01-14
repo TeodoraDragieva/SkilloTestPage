@@ -38,7 +38,7 @@ public class BaseTest {
     @Parameters({ "browser" })
     @BeforeMethod(alwaysRun = true)
     public void setUp(@Optional("chrome") String browser,  Method method) {
-        String tafName = "GUI TAF";
+        String tafName = "Teodora TAF";
 
         log = LogManager.getLogger(tafName);
         log.info(" ==== TEST CASE NAME : "+ method.getName() +" ====");
@@ -92,12 +92,12 @@ public class BaseTest {
 
         //If directory is not shown after git clone of the repo this code will build the path
         if (!directory.exists()) {
-            FileUtils.forceMkdir(directory);
+            //FileUtils.forceMkdir(directory);
             System.out.println("Created folder with path: "+ directoryPath);
         };
 
         System.out.println("Deleting not needed files from folder with path: "+ directoryPath);
-        FileUtils.cleanDirectory(directory);
+        //FileUtils.cleanDirectory(directory);
         String[] fileList = directory.list();
         if (fileList != null && fileList.length == 0) {
             System.out.printf("All file are deleted in Directory: %s%n", directoryPath);

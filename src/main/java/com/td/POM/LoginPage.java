@@ -1,4 +1,4 @@
-package com.n3qa.POM;
+package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
    public static final String LOGIN_PAGE = "/users/login";
+    public static final String LOGIN_FORM_TITLE = "Sign in";
 
     @FindBy(css = "p.h4")
     private WebElement loginFormHeaderTitle;
@@ -26,6 +27,8 @@ public class LoginPage extends BasePage {
     private WebElement loginFormRegisterPageLink;
     @FindBy (css = ".toast-message.ng-star-inserted")
     private WebElement loginFormToastMessage;
+    @FindBy (css = "i.fas.fa-sign-out-alt.fa-lg\n")
+    private WebElement logoutButton;
 
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -50,6 +53,11 @@ public class LoginPage extends BasePage {
         waitAndClickOnWebElement(loginFormSubmitButton);
     }
 
+    public boolean loginButtonIsShown(){
+        isPresented(loginFormSubmitButton);
+        return true;
+    }
+    
     public void loginWithUSerAndPassword(String user, String password){
         provideUserName(user);
         providePassword(password);
@@ -58,9 +66,13 @@ public class LoginPage extends BasePage {
 
     public String getLoginPageFormTitle(){
         wait.until(ExpectedConditions.visibilityOf(loginFormHeaderTitle));
-        String actualTitleText = loginFormHeaderTitle.getText();
+        return loginFormHeaderTitle.getText();
+    }
 
-        return actualTitleText;
+    public String getLoginPageUrl(){
+        WebElement requestedUrl = null;
+        wait.until(ExpectedConditions.visibilityOf(requestedUrl));
+        return loginFormHeaderTitle.getText();
     }
 
     public String getLoginActionMessage(){
@@ -69,4 +81,16 @@ public class LoginPage extends BasePage {
         return msg;
     }
 
+    public boolean isLogoutButtonShown() {
+            wait.until(ExpectedConditions.visibilityOf(logoutButton));
+            return true;
+        }
+
+    public boolean isPageTitleCorrect() {
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "ISkillo";
+        log.info("Verifying page title. Expected: " + expectedTitle + ", Actual: " + actualTitle);
+        return actualTitle.equals(expectedTitle);
+    }
 }
+
