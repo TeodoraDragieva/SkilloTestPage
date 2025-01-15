@@ -61,19 +61,18 @@ public class ProfilePage extends BasePage {
 
     Actions action = new Actions(driver);
 
-    public void HoverOverProfilePicture() {
-        action.moveToElement(uploadImage).perform();
-    }
-
-    public String getUsername() {
-        WebElement username = driver.findElement(By.tagName("h2"));
-        return username.getText();
-    }
+//    public void HoverOverProfilePicture() {
+//        action.moveToElement(uploadImage).perform();
+//    }
+//
+//    public String getUsername() {
+//        WebElement username = driver.findElement(By.tagName("h2"));
+//        return username.getText();
+//    }
 
     public void ClickOnDeleteButton() {
         waitAndClickOnWebElement(deletePostButton);
     }
-
 
     public int getPostCount() {
         List<WebElement> posts = driver.findElements(By.tagName("app-post"));
@@ -123,7 +122,29 @@ public class ProfilePage extends BasePage {
         return newPostCount;
     }
 
+    public int countAllPostsWithScrollUp() {
+        By postLocator = By.cssSelector("app-post.app-post");
+        int postCount = driver.findElements(postLocator).size();
+        int previousPostCount = -1;
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
+        do {
+            previousPostCount = postCount;
+            postCount = driver.findElements(postLocator).size();
+
+            jsExecutor.executeScript("window.scrollTo(0, 0);");
+
+            try {
+                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, previousPostCount));
+            } catch (TimeoutException e) {
+                log.info("Reached the top of the page or no more new posts. Total posts: " + postCount);
+                break;
+            }
+        } while (postCount > previousPostCount);
+
+        return postCount;
+    }
 
     public boolean isDeletedMessageVisible() {
         boolean isDeletedMessageVisible = false;

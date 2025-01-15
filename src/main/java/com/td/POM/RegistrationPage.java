@@ -71,7 +71,6 @@ public class RegistrationPage  extends BasePage {
         waitAndClickOnWebElement(signInButton);
     }
 
-
     public String getRegPageFormTitle(){
         wait.until(ExpectedConditions.visibilityOf(regFormHeaderTitle));
         return regFormHeaderTitle.getText();

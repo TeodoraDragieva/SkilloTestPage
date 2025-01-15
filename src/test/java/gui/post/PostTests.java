@@ -55,28 +55,28 @@ public class PostTests extends BaseTest {
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
         loginPage.loginWithUSerAndPassword(testUser, testPassword);
 
-        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+        log.info ("STEP 5.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
 
-        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+        log.info ("STEP 6.: Verify the navigation bare Profile link is presented and click on it.");
         homePage.clickOnNavBarProfile();
 
-        log.info("STEP 5.: Verify the User is navigated to the Profile Page");
+        log.info("STEP 7.: Verify the User is navigated to the Profile Page");
 
-        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
+        log.info("STEP 7.1.: Verify if the URL is for the Profile Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
         boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
         Assert.assertTrue(isProfilePageLoaded);
 
-        log.info("STEP 6.: Verify there is a post - to be deleted.");
+        log.info("STEP 8.: Verify there is a post - to be deleted.");
         int initialPostCount = profilePage.countAllPostsWithScroll();
         Assert.assertTrue(initialPostCount > 0);
 
-        log.info ("STEP 4.2.: The User click on navigation bar New Post link.");
+        log.info ("STEP 9.: The User click on navigation bar New Post link.");
         homePage.clickOnNavBarNewPost();
 
-        PostPage postPage = new PostPage(super.driver, log);
         log.info ("STEP 5.: Verify the User is on Post Page.");
+        PostPage postPage = new PostPage(super.driver, log);
 
         log.info("STEP 5.1.: Verify that the Upload Form is presented");
         String actualUploadFormTitle = postPage.getUploadPageFormTitle();
@@ -143,20 +143,6 @@ public class PostTests extends BaseTest {
 
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
-
-//        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
-//        homePage.clickOnNavBarProfile();
-//
-//        log.info("STEP 5.: Verify the User is navigated to the Profile Page");
-//
-//        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
-//        ProfilePage profilePage = new ProfilePage(super.driver,log);
-//        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
-//        Assert.assertTrue(isProfilePageLoaded);
-//
-//        log.info("STEP 6.: Verify there is a post - to be deleted.");
-//        int initialPostCount = profilePage.getPostCount();
-//        Assert.assertTrue(initialPostCount > 0);
 
         log.info ("STEP 4.2.: The User click on navigation bar Home link.");
         homePage.clickOnNavBarHome();
@@ -273,7 +259,7 @@ public class PostTests extends BaseTest {
         Assert.assertTrue(isProfilePageLoaded);
 
         log.info("STEP 6.: Verify there is a post - to be deleted.");
-        int initialPostCount = profilePage.getPostCount();
+        int initialPostCount = profilePage.countAllPostsWithScroll();
         Assert.assertTrue(initialPostCount > 0);
 
         log.info("STEP 7.: The user has clicked on the first post.");
@@ -286,9 +272,8 @@ public class PostTests extends BaseTest {
         profilePage.isDeletedMessageVisible();
 
         log.info("STEP 10.: Verify Post increased after deleting.");
-        int numberOfPostsAferDelete = profilePage.getPostCount();
-
-        Assert.assertTrue( numberOfPostsAferDelete > initialPostCount, "The posts didnt decreased.");
+        int numberOfPostsAferDelete = profilePage.countAllPostsWithScrollUp();
+        Assert.assertTrue( numberOfPostsAferDelete < initialPostCount, "The posts didnt decreased.");
 
     }
 
