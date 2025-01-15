@@ -58,6 +58,20 @@ public class PostTests extends BaseTest {
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
 
+        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+        homePage.clickOnNavBarProfile();
+
+        log.info("STEP 5.: Verify the User is navigated to the Profile Page");
+
+        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
+        ProfilePage profilePage = new ProfilePage(super.driver,log);
+        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
+        Assert.assertTrue(isProfilePageLoaded);
+
+        log.info("STEP 6.: Verify there is a post - to be deleted.");
+        int initialPostCount = profilePage.countAllPostsWithScroll();
+        Assert.assertTrue(initialPostCount > 0);
+
         log.info ("STEP 4.2.: The User click on navigation bar New Post link.");
         homePage.clickOnNavBarNewPost();
 
@@ -78,11 +92,12 @@ public class PostTests extends BaseTest {
         log.info ("STEP 8.: Verify the Post is created.");
 
         log.info ("STEP 8.1.: Verify there are more post shown.");
-        ProfilePage profilePage = new ProfilePage(super.driver, log);
-//        profilePage.verifyThereAreMorePostShown();
+        int postFinalCount = profilePage.countAllPostsWithScroll();
+        Assert.assertTrue(postFinalCount > initialPostCount, "Posts didnt increased.");
 
         log.info ("STEP 8.2.: Click on Post.");
-        profilePage.clickPost(0);
+        int lastPostIndex = profilePage.getLastPostIndex();
+        profilePage.clickPost(lastPostIndex);
 
         log.info ("STEP 8.3.: Verify the Image is visibale in the Post Modal.");
         PostModal postModal = new PostModal(super.driver, log);
@@ -128,6 +143,20 @@ public class PostTests extends BaseTest {
 
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
+
+//        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+//        homePage.clickOnNavBarProfile();
+//
+//        log.info("STEP 5.: Verify the User is navigated to the Profile Page");
+//
+//        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
+//        ProfilePage profilePage = new ProfilePage(super.driver,log);
+//        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
+//        Assert.assertTrue(isProfilePageLoaded);
+//
+//        log.info("STEP 6.: Verify there is a post - to be deleted.");
+//        int initialPostCount = profilePage.getPostCount();
+//        Assert.assertTrue(initialPostCount > 0);
 
         log.info ("STEP 4.2.: The User click on navigation bar Home link.");
         homePage.clickOnNavBarHome();

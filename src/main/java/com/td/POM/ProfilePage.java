@@ -6,7 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ProfilePage extends BasePage {
@@ -78,6 +80,12 @@ public class ProfilePage extends BasePage {
         return posts.size();
     }
 
+    public int getLastPostIndex() {
+        List<WebElement> posts = driver.findElements(By.tagName("app-post"));
+        int lastPostIndex = posts.size() - 1;
+        return lastPostIndex;
+    }
+
     public void clickPost(int index) {
             List<WebElement> posts = driver.findElements(By.cssSelector("app-post.app-post"));
         if (index >= 0 && index < posts.size()) {
@@ -88,6 +96,34 @@ public class ProfilePage extends BasePage {
                 throw new IndexOutOfBoundsException("Invalid post with index: " + index);
             }
 }
+
+    public int countAllPostsWithScroll() {
+        By postLocator = By.cssSelector("app-post.app-post");
+        int postCount = 0;
+        int newPostCount = 0;
+
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        do {
+            postCount = driver.findElements(postLocator).size();
+            jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+            try {
+                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, postCount));
+            } catch (TimeoutException e) {
+                log.info("Reached the end of the page. Total posts: " + postCount);
+                break;
+            }
+
+            newPostCount = driver.findElements(postLocator).size();
+
+        } while (newPostCount > postCount);
+
+        return newPostCount;
+    }
+
+
 
     public boolean isDeletedMessageVisible() {
         boolean isDeletedMessageVisible = false;
