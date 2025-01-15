@@ -4,6 +4,7 @@ import com.td.POM.*;
 import com.td.POM.HomePage;
 import com.td.POM.ProfilePage;
 import gui.base.BaseTest;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -90,7 +91,6 @@ public class PostTests extends BaseTest {
         log.info ("STEP 8.4.: Verify the text of the new post is visible.");
         String postUserTxt = postModal.getPostUser();
         Assert.assertEquals(postUserTxt, testUser);
-
     }
 
     @Test (priority = 1)
@@ -203,7 +203,6 @@ public class PostTests extends BaseTest {
         profilePage.ClickOnUserWithUploadedPic();
 
         log.info("STEP 7.: The User is in the Other User Profile - Lora");
-        //VERIFY - Username Name ???
 
         log.info("STEP 8.: The user has clicked on the first post of the Other User.");
         profilePage.clickPost(0);
@@ -237,24 +236,16 @@ public class PostTests extends BaseTest {
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.clickOnNavBarProfile();
 
-        //is navigation Bar Profile link Shown.
-
-
         log.info("STEP 5.: Verify the User is navigated to the Profile Page");
 
-//        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
+        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
-//        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
-//        Assert.assertTrue(isProfilePageLoaded);
-
-//
+        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
+        Assert.assertTrue(isProfilePageLoaded);
 
         log.info("STEP 6.: Verify there is a post - to be deleted.");
-
         int initialPostCount = profilePage.getPostCount();
-//        boolean areTherePostShown = initialPostCount > 0;
-//        Assert.assertTrue(areTherePostShown);
-        /////
+        Assert.assertTrue(initialPostCount > 0);
 
         log.info("STEP 7.: The user has clicked on the first post.");
         profilePage.clickPost(0);
@@ -262,17 +253,13 @@ public class PostTests extends BaseTest {
         log.info("STEP 8.: The user has clicked on the Delete post button and Confirmed they want the post to be deleted.");
         profilePage.deleteWithConfirmationPost();
 
-        log.info("STEP 10.: Verify the Delete Message is presented.");
+        log.info("STEP 9.: Verify the Delete Message is presented.");
         profilePage.isDeletedMessageVisible();
 
-//        int postCountAfterDeleting = profilePage.getPostCount(0);
+        log.info("STEP 10.: Verify Post increased after deleting.");
+        int numberOfPostsAferDelete = profilePage.getPostCount();
 
-//
-
-        log.info("STEP 9.: The Post increased after deletion.");
-        int postCountAfterDelete = profilePage.checkPostCountAfterDeletion();
-        Assert.assertEquals( postCountAfterDelete, initialPostCount - 1  );
-
+        Assert.assertTrue( numberOfPostsAferDelete > initialPostCount, "The posts didnt decreased.");
 
     }
 

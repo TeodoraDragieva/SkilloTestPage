@@ -72,14 +72,10 @@ public class ProfilePage extends BasePage {
         waitAndClickOnWebElement(deletePostButton);
     }
 
-    public void clickOnPrivateButton() {
-        waitAndClickOnWebElement(privateButtonInProfilePage);
-    }
 
     public int getPostCount() {
-        List<WebElement> posts = driver.findElements(By.cssSelector("app-post.app-post"));
-            wait.until(ExpectedConditions.visibilityOf(postsLocator));
-            return posts.size();
+        List<WebElement> posts = driver.findElements(By.tagName("app-post"));
+        return posts.size();
     }
 
     public void clickPost(int index) {
@@ -92,19 +88,6 @@ public class ProfilePage extends BasePage {
                 throw new IndexOutOfBoundsException("Invalid post with index: " + index);
             }
 }
-//        List<WebElement> posts = driver.findElements(By.tagName("app-post"));
-//        posts.get(postIndex).click();
-//
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("return document.readyState").equals("complete");
-
-
-//    public void verifyThereAreMorePostShown() {
-//
-//        ProfilePage profilePage = new ProfilePage(super.driver, log);
-//        boolean isMorePostShown = profilePage.getPostCount() > 0;
-//        Assert.assertTrue(isMorePostShown);
-//    }
 
     public boolean isDeletedMessageVisible() {
         boolean isDeletedMessageVisible = false;
@@ -155,11 +138,6 @@ public class ProfilePage extends BasePage {
         ProfilePage profilePage = new ProfilePage(super.driver, log);
         profilePage.ClickOnDeleteButton();
         profilePage.ClickOnYesButton();
-    }
-
-    public int checkPostCountAfterDeletion() {
-        List<WebElement> posts = driver.findElements(By.cssSelector("app-post.app-post"));
-        return posts.size();
     }
 
 }
