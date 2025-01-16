@@ -7,13 +7,10 @@ import gui.base.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.File;
 
 import static com.td.POM.LoginPage.LOGIN_FORM_TITLE;
 import static com.td.POM.ProfilePage.PROFILE_PAGE;
-import static com.td.POM.RegistrationPage.REGISTRATION_FORM_TITLE;
-import static com.td.POM.RegistrationPage.REGISTRATION_PAGE_URL;
 
 public class PostTests extends BaseTest {
     public static final String testUser = "testingDemos";
@@ -53,57 +50,57 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUSerAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword(testUser, testPassword);
 
-        log.info ("STEP 5.: Verify the navigation bare Home link is presented.");
+        log.info ("STEP 4.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
 
-        log.info ("STEP 6.: Verify the navigation bare Profile link is presented and click on it.");
+        log.info ("STEP 5.: Verify the navigation bare Profile link is presented and click on it.");
         homePage.clickOnNavBarProfile();
 
-        log.info("STEP 7.: Verify the User is navigated to the Profile Page");
+        log.info("STEP 6.: Verify the User is navigated to the Profile Page");
 
-        log.info("STEP 7.1.: Verify if the URL is for the Profile Page");
+        log.info("STEP 6.1.: Verify if the URL is for the Profile Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
         boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
         Assert.assertTrue(isProfilePageLoaded);
 
-        log.info("STEP 8.: Verify there is a post - to be deleted.");
+        log.info("STEP 7.: Verify there is a post - to be deleted.");
         int initialPostCount = profilePage.countAllPostsWithScroll();
         Assert.assertTrue(initialPostCount > 0);
 
-        log.info ("STEP 9.: The User click on navigation bar New Post link.");
+        log.info ("STEP 8.: The User click on navigation bar New Post link.");
         homePage.clickOnNavBarNewPost();
 
-        log.info ("STEP 5.: Verify the User is on Post Page.");
+        log.info ("STEP 9.: Verify the User is on Post Page.");
         PostPage postPage = new PostPage(super.driver, log);
 
-        log.info("STEP 5.1.: Verify that the Upload Form is presented");
+        log.info("STEP 9.1.: Verify that the Upload Form is presented");
         String actualUploadFormTitle = postPage.getUploadPageFormTitle();
         Assert.assertEquals(actualUploadFormTitle,UPLOAD_FORM_TITLE);
 
-        log.info ("STEP 6.: The User is Uploading New Picture.");
+        log.info ("STEP 10.: The User is Uploading New Picture.");
         postPage.uploadPicture(postPicture);
 
-        log.info ("STEP 7.: The User is providing Post Caption.");
+        log.info ("STEP 11.: The User is providing Post Caption.");
         postPage.providePostCaption(caption);
         postPage.clickCreatePostButton();
 
-        log.info ("STEP 8.: Verify the Post is created.");
+        log.info ("STEP 12.: Verify the Post is created.");
 
-        log.info ("STEP 8.1.: Verify there are more post shown.");
-        int postFinalCount = profilePage.countAllPostsWithScroll();
-        Assert.assertTrue(postFinalCount > initialPostCount, "Posts didnt increased.");
+        log.info ("STEP 12.1.: Verify there is one more post shown.");
+        int postFinalCount = profilePage.countAllPostsWithScroll ();
+        Assert.assertTrue(postFinalCount == initialPostCount + 1, "Posts didn't increase by 1.");
 
-        log.info ("STEP 8.2.: Click on Post.");
+        log.info ("STEP 12.2.: Click on Post.");
         int lastPostIndex = profilePage.getLastPostIndex();
         profilePage.clickPost(lastPostIndex);
 
-        log.info ("STEP 8.3.: Verify the Image is visibale in the Post Modal.");
+        log.info ("STEP 12.3.: Verify the Image is visibale in the Post Modal.");
         PostModal postModal = new PostModal(super.driver, log);
         Assert.assertTrue(postModal.isImageVisible(), "The image is not visible!");
 
-        log.info ("STEP 8.4.: Verify the text of the new post is visible.");
+        log.info ("STEP 12.4.: Verify the text of the new post is visible.");
         String postUserTxt = postModal.getPostUser();
         Assert.assertEquals(postUserTxt, testUser);
     }
@@ -139,7 +136,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUSerAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword(testUser, testPassword);
 
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
@@ -199,7 +196,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUSerAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword(testUser, testPassword);
 
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
@@ -246,7 +243,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUSerAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword(testUser, testPassword);
 
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.clickOnNavBarProfile();
@@ -271,9 +268,9 @@ public class PostTests extends BaseTest {
         log.info("STEP 9.: Verify the Delete Message is presented.");
         profilePage.isDeletedMessageVisible();
 
-        log.info("STEP 10.: Verify Post increased after deleting.");
+        log.info("STEP 10.: Verify Post decreased after deleting.");
         int numberOfPostsAferDelete = profilePage.countAllPostsWithScrollUp();
-        Assert.assertTrue( numberOfPostsAferDelete < initialPostCount, "The posts didnt decreased.");
+        Assert.assertTrue( numberOfPostsAferDelete == initialPostCount - 1, "The posts didnt decreased.");
 
     }
 

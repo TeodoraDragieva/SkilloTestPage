@@ -58,7 +58,7 @@ public class LoginPage extends BasePage {
         return true;
     }
     
-    public void loginWithUSerAndPassword(String user, String password){
+    public void loginWithUserAndPassword(String user, String password){
         provideUserName(user);
         providePassword(password);
         clickOnLoginButton();
