@@ -38,75 +38,59 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath = "//a[@class='post-user']")
     private WebElement userLinkLocator;
     @FindBy(css = "app-post.app-post")
-    private WebElement postsLocator;
-    @FindBy (css = "label.btn-private.active > input[type='radio']")
-    private  WebElement privateButtonInProfilePage;
+    private List<WebElement> posts;
+    @FindBy(css = "label.btn-private.active > input[type='radio']")
+    private WebElement privateButtonInProfilePage;
 
     public ProfilePage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver, this);
     }
 
-    public void ClickOnYesButton() {
-        waitAndClickOnWebElement(areYouSureYesButton);
-    }
-
-    public void ClickOnLikeButton() {
+    public void clickOnLikeButton() {
         waitAndClickOnWebElement(likeButton);
     }
 
-    public void ClickOnUserWithUploadedPic() {
+    public void clickOnUserWithUploadedPic() {
         waitAndClickOnWebElement(selectUserProfile38);
     }
 
-    Actions action = new Actions(driver);
+    public void clickOnYesButton() {
+        waitAndClickOnWebElement(areYouSureYesButton);
+    }
 
-//    public void HoverOverProfilePicture() {
-//        action.moveToElement(uploadImage).perform();
-//    }
-//
-//    public String getUsername() {
-//        WebElement username = driver.findElement(By.tagName("h2"));
-//        return username.getText();
-//    }
-
-    public void ClickOnDeleteButton() {
+    public void clickOnDeleteButton() {
         waitAndClickOnWebElement(deletePostButton);
     }
 
     public int getPostCount() {
-        List<WebElement> posts = driver.findElements(By.tagName("app-post"));
         return posts.size();
     }
 
     public int getLastPostIndex() {
-        List<WebElement> posts = driver.findElements(By.tagName("app-post"));
-        int lastPostIndex = posts.size() - 1;
-        return lastPostIndex;
+        return getPostCount() - 1;
     }
 
     public void clickPost(int index) {
-            List<WebElement> posts = driver.findElements(By.cssSelector("app-post.app-post"));
-        if (index >= 0 && index < posts.size()) {
+        if (index >= 0 && index < getPostCount()) {
             WebElement post = posts.get(index);
-                wait.until(ExpectedConditions.visibilityOf(post));
-                post.click();
-            } else {
-                throw new IndexOutOfBoundsException("Invalid post with index: " + index);
-            }
-}
+            wait.until(ExpectedConditions.visibilityOf(post));
+            post.click();
+        } else {
+            throw new IndexOutOfBoundsException("Invalid post with index: " + index);
+        }
+    }
 
     public int countAllPostsWithScroll() {
         By postLocator = By.cssSelector("app-post.app-post");
         int postCount = 0;
         int newPostCount = 0;
 
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         do {
             postCount = driver.findElements(postLocator).size();
-            jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+            scrollToBottom();  // Използваме новия метод
 
             try {
                 wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, postCount));
@@ -125,15 +109,14 @@ public class ProfilePage extends BasePage {
     public int countAllPostsWithScrollUp() {
         By postLocator = By.cssSelector("app-post.app-post");
         int postCount = driver.findElements(postLocator).size();
-        int previousPostCount = -1;
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        int previousPostCount;
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         do {
             previousPostCount = postCount;
             postCount = driver.findElements(postLocator).size();
-
-            jsExecutor.executeScript("window.scrollTo(0, 0);");
+            scrollToTop();  // Използваме новия метод
 
             try {
                 wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, previousPostCount));
@@ -146,57 +129,30 @@ public class ProfilePage extends BasePage {
         return postCount;
     }
 
-    public boolean isDeletedMessageVisible() {
-        boolean isDeletedMessageVisible = false;
+
+    private boolean isElementVisible(WebElement element) {
         try {
-            isDeletedMessageVisible = wait.until(ExpectedConditions.visibilityOf(confirmDeletionMessage)).isDisplayed();
-            log.info("CONFIRMATION # The Post is Deleted! Message is displayed.");
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            log.error("ERROR : The Post Deleted! message is not displayed!");
-            isDeletedMessageVisible = false;
+            return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
+        } catch (NoSuchElementException | TimeoutException e) {
+            log.error("Element is not visible: " + element);
+            return false;
         }
-        return isDeletedMessageVisible;
+    }
+
+    public boolean isDeletedMessageVisible() {
+        return isElementVisible(confirmDeletionMessage);
     }
 
     public boolean isLikeMessageVisible() {
-        boolean isLikeMessageVisible = false;
-        try {
-            isLikeMessageVisible = wait.until(ExpectedConditions.visibilityOf(postLikeMessage)).isDisplayed();
-            log.info("CONFIRMATION # The Post liked message is displayed.");
-            isLikeMessageVisible = true;
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            log.error("ERROR : The Post liked message is not displayed!");
-            isLikeMessageVisible = false;
-        }
-        return isLikeMessageVisible;
+        return isElementVisible(postLikeMessage);
     }
 
     public boolean isDislikeMessageVisible() {
-        boolean isDislikeMessageVisible = false;
-        try {
-            isDislikeMessageVisible = wait.until(ExpectedConditions.visibilityOf(postDislikeMessage)).isDisplayed();
-            log.info("CONFIRMATION # The Post disliked message is displayed.");
-            isDislikeMessageVisible = true;
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            log.error("ERROR : The Post disliked message is not displayed!");
-            isDislikeMessageVisible = false;
-        }
-        return isDislikeMessageVisible;
+        return isElementVisible(postDislikeMessage);
     }
 
     public void closePostModal() {
         waitAndClickOnWebElement(userLinkLocator);
     }
 
-    public void deleteWithConfirmationPost() {
-        ProfilePage profilePage = new ProfilePage(super.driver, log);
-        profilePage.ClickOnDeleteButton();
-        profilePage.ClickOnYesButton();
-    }
-
 }
-
-

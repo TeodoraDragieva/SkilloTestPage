@@ -84,4 +84,15 @@ public class BasePage {
         String info  = "LOCATOR STRATEGY BY: "+locatorStrategy.toUpperCase()+" LOCATOR EXPRESSION: "+locatorExpression;
         return  info;
     }
+
+    public void scrollToBottom() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+
+    public void scrollToTop() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, 0);");
+    }
+
 }

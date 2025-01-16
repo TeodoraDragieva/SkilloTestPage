@@ -148,7 +148,7 @@ public class PostTests extends BaseTest {
         ProfilePage profilePage = new ProfilePage(super.driver,log);
 
         log.info("STEP 6.: The User select Profile of other User - Lora");
-        profilePage.ClickOnUserWithUploadedPic();
+        profilePage.clickOnUserWithUploadedPic();
 
         log.info("STEP 7.: The User is in the Other User Profile - Lora");
 
@@ -156,7 +156,7 @@ public class PostTests extends BaseTest {
         profilePage.clickPost(0);
 
         log.info("STEP 9.:The user has clicked on the like button.");
-        profilePage.ClickOnLikeButton();
+        profilePage.clickOnLikeButton();
 
         log.info("STEP 10.:Verify if the Like Message is visible.");
         profilePage.isLikeMessageVisible();
@@ -206,13 +206,13 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 5.: Verify the User is navigated to the Profile Page");
 
-        log.info("STEP 5.: Verify if the URL is for the Profile Page");
+        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
         boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
         Assert.assertTrue(isProfilePageLoaded);
 
         log.info("STEP 6.: The User select Profile of other User - Lora");
-        profilePage.ClickOnUserWithUploadedPic();
+        profilePage.clickOnUserWithUploadedPic();
 
         log.info("STEP 7.: The User is in the Other User Profile - Lora");
 
@@ -220,7 +220,7 @@ public class PostTests extends BaseTest {
         profilePage.clickPost(0);
 
         log.info("STEP 9.: The user click on the Like button in order to dislike post.");
-        profilePage.ClickOnLikeButton();
+        profilePage.clickOnLikeButton();
 
         log.info("STEP 10.: Verify if the Dislike Message is visible.");
         profilePage.isDislikeMessageVisible();
@@ -230,51 +230,45 @@ public class PostTests extends BaseTest {
 
     }
 
-    @Test (priority = 3)
-    public void verifyUserCanDeletePost() throws InterruptedException {
+    @Test(priority = 3)
+    public void verifyUserCanDeletePost() {
         HomePage homePage = new HomePage(super.driver, log);
         LoginPage loginPage = new LoginPage(super.driver, log);
 
-        log.info("STEP 1.: The user has navigated to the Login page.");
+        log.info("STEP 1: Navigating to the Login page.");
         loginPage.navigateToLoginPage();
 
-        log.info("STEP 2.: Verify the User is successfully landed on the Login Page.");
-        String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
-        Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
+        log.info("STEP 2: Verifying user is on the Login Page.");
+        Assert.assertEquals(loginPage.getLoginPageFormTitle(), LOGIN_FORM_TITLE, "Incorrect login page title.");
 
-        log.info("STEP 3.: Provide username and password and clicking on Login Button.");
+        log.info("STEP 3: Logging in with valid credentials.");
         loginPage.loginWithUserAndPassword(testUser, testPassword);
 
-        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+        log.info("STEP 4: Clicking on Profile link in navigation bar.");
         homePage.clickOnNavBarProfile();
 
-        log.info("STEP 5.: Verify the User is navigated to the Profile Page");
+        log.info("STEP 5: Verifying the user is navigated to the Profile Page.");
+        ProfilePage profilePage = new ProfilePage(super.driver, log);
+        Assert.assertTrue(profilePage.isURLLoaded(PROFILE_PAGE), "Failed to navigate to Profile Page.");
 
-        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
-        ProfilePage profilePage = new ProfilePage(super.driver,log);
-        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
-        Assert.assertTrue(isProfilePageLoaded);
-
-        log.info("STEP 6.: Verify there is a post - to be deleted.");
+        log.info("STEP 6: Checking for existing posts to delete.");
         int initialPostCount = profilePage.countAllPostsWithScroll();
-        Assert.assertTrue(initialPostCount > 0);
+        Assert.assertTrue(initialPostCount > 0, "No posts available to delete.");
 
-        log.info("STEP 7.: The user has clicked on the first post.");
+        log.info("STEP 7: Selecting and deleting the first post.");
         profilePage.clickPost(0);
+        profilePage.clickOnDeleteButton();
+        profilePage.clickOnYesButton();
 
-        log.info("STEP 8.: The user has clicked on the Delete post button and Confirmed they want the post to be deleted.");
-        profilePage.deleteWithConfirmationPost();
+        log.info("STEP 8: Verifying deletion confirmation message.");
+        Assert.assertTrue(profilePage.isDeletedMessageVisible(), "Deletion confirmation message not displayed.");
 
-        log.info("STEP 9.: Verify the Delete Message is presented.");
-        profilePage.isDeletedMessageVisible();
-
-        log.info("STEP 10.: Verify Post decreased after deleting.");
-        int numberOfPostsAferDelete = profilePage.countAllPostsWithScrollUp();
-        Assert.assertTrue( numberOfPostsAferDelete == initialPostCount - 1, "The posts didnt decreased.");
-
+        log.info("STEP 9: Verifying post count decreased.");
+        int postCountAfterDelete = profilePage.countAllPostsWithScrollUp();
+        Assert.assertEquals(postCountAfterDelete, initialPostCount - 1, "Post count did not decrease by 1.");
     }
 
-    }
+}
 
 
 //    @Test(priority = 1) ????
