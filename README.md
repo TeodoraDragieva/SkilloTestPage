@@ -17,7 +17,7 @@
 - [Contact](#contact)
 
 ## Overview
-Iskillo social networks is an online platforms where users can create profiles,
+Iskillo social networks is an online platform where users can create profiles,
 connect with friends and family.
 
 All Iskillo users can share content, and engage with
@@ -31,10 +31,10 @@ Many QA engineers are connected via the fast variety of  test automation activit
 
 ## Test activities performed with Selenium 4.25 and TestNG 10 Java unit framework:
 List of the test cases.
-- Registration feature
-    - Verify user cn registered in the system with valid data
-    - Verify user cannot register in the system with invalid data
-
+Registration feature:
+- Verify user cаn registered in the system with valid data.
+- Verify user can NOT register in the system with already taken username.
+- - Verify user can NOT register in the system with alerady taken password.
 
 - Login feature
     - Verify already registered user can successfully login in the system
@@ -43,18 +43,15 @@ List of the test cases.
     - Verify already registered user can NOT successfully login in the system  with NO CREDENTIALS
 
 - Post feature
-    - Verify  user can create a new post
-    - Verify user can delete a post
-  
-- Profile feature
-  - Verify use can upload profile picture
+    - Verify  user can create a new post.
+    - Verify user can delete a post.
+    - Verify user can like post.
+    - Verify user can dislike post.
 
-- End to end scenario
-  - Registration - Login - Profile - Post 
   
 ## Installation
 
-- Clone the repository (please use this link): 
+- Clone the repository (please use this link): https://github.com/TeodoraDragieva/SkilloTestPage
   
 - Make sure you have JAVA version 23 and up and running
 
@@ -70,12 +67,12 @@ Please visit the Test Automation Framework with linK:
 Make sure that you can clone the repository. Follow the 3 different ways to do so:
 
 Tip number 1:
-- Go to the GitHub website with the link above and click on download button
-- Next action is to unarchived the repository in your favorite place 
+- Go to the GitHub website with the link above and click on download button.
+- Next action is to unarchived the repository in your favorite place.
 
 Tip number 2:
 - Go to the GitHub website copy the gitRepo HTTPS link and use git Bash
-    - Git clone " "
+    - Git clone "https://github.com/TeodoraDragieva/SkilloTestPage"
     - cd code repo src folder
     - Other git commands needed
 
@@ -87,7 +84,7 @@ Tip number 3:
 
 CHECK FOLDER PATHS:
 
-This is a steps that needs to be done for Windows OS users:
+These are steps that need to be done for Windows OS users:
 Go to SRC TEST RESOURCES folder and verify if the following folders are presented:
 - There is a folder with name "reports"
 - There is a folder with name "screenshots"
@@ -108,12 +105,12 @@ mvn clean test
 
 STEP 3:
 
-Wait a bit the automation to start and after the test execution a report will be generated
+Wait a bit the automation to start and after the test execution a report will be generated.
 
 ## Bug report
-If you find any bugs that you want to report, please do so with the bug report and liveCicle explained
+If you find any bugs that you want to report, please do so with the bug report and live Cycle explained.
 
 ## Contact
 
-- [Skulo Student](mailto:skiloSutdent@abv.bg)
-- Project Link: [TAF Selenium 4 TestNG 7 ](https://github.com/)
+- [Teodora Dragieva](mailto:teodoradr.2018@gmail.com)
+- Project Link: [TAF Selenium 4 TestNG 7 V1 T](https://github.com/TeodoraDragieva/SkilloTestPage)

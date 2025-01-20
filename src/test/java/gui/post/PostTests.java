@@ -131,7 +131,7 @@ public class PostTests extends BaseTest {
 
         LoginPage loginPage = new LoginPage(super.driver, log);
 
-        log.info("STEP 2.1.: Verify the User is successfully landed on the Login Page.");
+        log.info("STEP 2.1.: Verify the User successfully landed on the Login Page.");
         String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
