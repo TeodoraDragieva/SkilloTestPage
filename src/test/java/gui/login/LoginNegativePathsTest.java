@@ -15,7 +15,7 @@ public class LoginNegativePathsTest extends BaseTest {
     public void verifyUserCannotLoginWithWrongUserName() throws InterruptedException {
         LoginPage loginPage = new LoginPage(super.driver,log);
 
-        log.info("STEP 1: Already registered user is landing Iskilo Login Page");
+        log.info("STEP 1: Already registered user is landing on Iskilo Login Page");
         loginPage.navigateToLoginPage();
 
         log.info("STEP 1.1.Verify the user is on the Login page");
@@ -32,7 +32,7 @@ public class LoginNegativePathsTest extends BaseTest {
         log.info("STEP 4. Provide password");
         loginPage.providePassword("testing");
 
-        log.info("STEP 5. Click on loginButton");
+        log.info("STEP 5. Click on login Button");
         loginPage.clickOnLoginButton();
 
         log.info("STEP 6.1. Verify the Login is successful");

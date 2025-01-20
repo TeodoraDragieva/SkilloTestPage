@@ -8,7 +8,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.regData.RegistrationDataGenerator;
 
-import static com.td.POM.HomePage.HOME_PAGE_URL;
 import static com.td.POM.RegistrationPage.REGISTRATION_FORM_TITLE;
 import static com.td.POM.RegistrationPage.REGISTRATION_PAGE_URL;
 
@@ -16,6 +15,7 @@ import static com.td.POM.RegistrationPage.REGISTRATION_PAGE_URL;
 public class RegistrationHappyPath extends BaseTest {
 
     public static final String REGISTRATION_SUCCESSFUL_MSG = "Successful register!";
+    private static final String HOME_PAGE_URL = "/posts/all";
 
     @Test
     public void verifyUserCanRegisterWithValidData() throws InterruptedException {

@@ -6,12 +6,11 @@ import gui.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static com.td.POM.HomePage.HOME_PAGE_URL;
-
 public class LoginHappyPathsTest extends BaseTest {
 
     private static final String LOGIN_FORM_TITLE = "Sign in";
     public static final String LOGIN_SUCCESSFUL_MSG = "Successful login!";
+    private static final String HOME_PAGE_URL = "/posts/all";
 
     @Test
     public void verifyTheUserCanLoginWithValidCredentials() throws InterruptedException {
@@ -43,10 +42,10 @@ public class LoginHappyPathsTest extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and clicking on ");
-        loginPage.provideUserName("tedi_dr_90@abv.bg");
+        loginPage.provideUserName("tedi90@abv.bg");
 
         log.info("STEP 4.: Provide password");
-        loginPage.providePassword("pukankii2");
+        loginPage.providePassword("Pukanka2");
 
         log.info("STEP 5. Click on loginButton");
         loginPage.clickOnLoginButton();
@@ -69,7 +68,6 @@ public class LoginHappyPathsTest extends BaseTest {
         boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
     }
-
 
    //2. Login with newly created/registered user - valid credentials
 }

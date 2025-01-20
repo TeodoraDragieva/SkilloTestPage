@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.TD</groupId>
-  <artifactId>TAF_S4_TNG7_V1_Т</artifactId>
+  <artifactId>TAFS4TNG10</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -42,6 +42,7 @@
       <artifactId>testng</artifactId>
       <version>${testng.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
@@ -54,17 +55,19 @@
       <artifactId>log4j-api</artifactId>
       <version>${lof4j.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>${lof4j.version}</version>
     </dependency>
-      <dependency>
-          <groupId>commons-io</groupId>
-          <artifactId>commons-io</artifactId>
-          <version>2.17.0</version>
-          <scope>test</scope>
-      </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.17.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>

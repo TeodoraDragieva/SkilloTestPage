@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
+
 public class LoginPage extends BasePage {
    public static final String LOGIN_PAGE = "/users/login";
     public static final String LOGIN_FORM_TITLE = "Sign in";
@@ -69,12 +72,6 @@ public class LoginPage extends BasePage {
         return loginFormHeaderTitle.getText();
     }
 
-    public String getLoginPageUrl(){
-        WebElement requestedUrl = null;
-        wait.until(ExpectedConditions.visibilityOf(requestedUrl));
-        return loginFormHeaderTitle.getText();
-    }
-
     public String getLoginActionMessage(){
         wait.until(ExpectedConditions.visibilityOf(loginFormToastMessage));
         String msg = loginFormToastMessage.getText();
@@ -82,9 +79,15 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isLogoutButtonShown() {
+        try {
             wait.until(ExpectedConditions.visibilityOf(logoutButton));
+            log.info("Logout button is visible.");
             return true;
+        } catch (NoSuchElementException e) {
+            log.error("ERROR: Logout button is not visible.", e);
+            return false;
         }
+    }
 
     public boolean isPageTitleCorrect() {
         String actualTitle = driver.getTitle();
