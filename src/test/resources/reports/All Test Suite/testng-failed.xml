@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="5" name="C:/CODE/SELENIUM/SKILLO/TAF_S4_TNG7_V1(failed)" verbose="0">
+  <test thread-count="5" name="C:/Users/Teddy/Documents/GitHub/SKILLO_AT_16_TAF(failed)" verbose="0">
     <classes>
       <class name="gui.post.PostTests">
         <methods>
           <include name="tearDown"/>
-          <include name="cleanFiles"/>
           <include name="setUp"/>
+          <include name="cleanFiles"/>
           <include name="setupTestSuite"/>
-          <include name="verifyUserCanDislikePost"/>
+          <include name="verifyUserCanCreatePost"/>
         </methods>
       </class> <!-- gui.post.PostTests -->
-      <class name="gui.registration.RegistrationHappyPath">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="cleanFiles"/>
-          <include name="verifyUserCanRegisterWithValidData"/>
-          <include name="setupTestSuite"/>
-        </methods>
-      </class> <!-- gui.registration.RegistrationHappyPath -->
-      <class name="gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost">
-        <methods>
-          <include name="tearDown"/>
-          <include name="cleanFiles"/>
-          <include name="setUp"/>
-          <include name="setupTestSuite"/>
-          <include name="basicEndToEnd"/>
-        </methods>
-      </class> <!-- gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost -->
     </classes>
-  </test> <!-- C:/CODE/SELENIUM/SKILLO/TAF_S4_TNG7_V1(failed) -->
+  </test> <!-- C:/Users/Teddy/Documents/GitHub/SKILLO_AT_16_TAF(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

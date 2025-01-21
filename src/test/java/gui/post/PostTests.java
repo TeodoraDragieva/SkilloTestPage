@@ -210,7 +210,7 @@ public class PostTests extends BaseTest {
         boolean isHomePageLoaded = HomePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
 
-        log.info("STEP 5.: The User select Profile of other User - Lora");
+        log.info("STEP 5.: The User selects Profile of other User - Lora");
         profilePage.clickOnUserWithUploadedPic();
 
         log.info("STEP 7.: The User is in the Other User Profile - Lora");
