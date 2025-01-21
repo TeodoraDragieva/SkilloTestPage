@@ -138,15 +138,14 @@ public class PostTests extends BaseTest {
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
         loginPage.loginWithUserAndPassword(testUser, testPassword);
 
-        log.info ("STEP 4.1.: Verify the navigation bar Home link is presented.");
+        log.info("STEP 5.: Verify the User is navigated to the Home Page");
+
+        log.info ("STEP 5.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
 
-        log.info ("STEP 4.2.: The User click on navigation bar Home link.");
-        homePage.clickOnNavBarHome();
-
-        log.info("STEP 5.: The User is navigated to the Public Page");
-
-
+        log.info("STEP 5.2.: Verify if the URL is for the Home Page");
+        boolean isHomePageLoaded = HomePage.isUrlLoaded(HOME_PAGE_URL);
+        Assert.assertTrue(isHomePageLoaded);
 
         ProfilePage profilePage = new ProfilePage(super.driver,log);
 
