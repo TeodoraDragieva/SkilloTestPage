@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Teddy/Documents/GitHub/SKILLO_AT_16_TAF">
+        <classes>
+            <class name="gui.login.LoginHappyPathsTest">
+                <methods>
+                    <include name="verifyTheUserCanLoginWithValidCredentials"/>
+                </methods>
+            </class>
+            <class name="gui.login.LoginNegativePathsTest">
+                <methods>
+                    <include name="verifyUserCannotLoginWithWrongUserName"/>
+                </methods>
+            </class>
+            <class name="gui.post.PostTests">
+                <methods>
+                    <include name="verifyUserCanCreatePost"/>
+                    <include name="verifyUserCanLikeOtherMembersPost"/>
+                    <include name="verifyUserCanDislikeOtherMembersPost"/>
+                    <include name="verifyUserCanDeletePost"/>
+                </methods>
+            </class>
+            <class name="gui.registration.RegistrationHappyPath">
+                <methods>
+                    <include name="verifyUserCanRegisterWithValidData"/>
+                </methods>
+            </class>
+            <class name="gui.registration.RegistrationNegativePathTests">
+                <methods>
+                    <include name="verifyTheUserCannotRegisterWithTakenUsername"/>
+                    <include name="verifyTheUserCannotRegisterWithTakenEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

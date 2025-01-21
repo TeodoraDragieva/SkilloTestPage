@@ -43,37 +43,40 @@ public class RegistrationHappyPath extends BaseTest {
         log.info("STEP 3.: Provide Random email");
         registrationPage.provideEmail(EMAIL);
 
-        log.info("STEP 4.: Provide Date of Birth");
+        log.info("STEP 4.: Provide Date of Birth.");
         registrationPage.provideDateOfBirth("01/01/1990");
 
-        log.info("STEP 5.: Provide Date of Birth");
+        log.info("STEP 5.: Provide Password.");
         registrationPage.providePasswordForRegistrationForm("123456A");
 
-        log.info("STEP 6.:Provide Date of Birth");
+        log.info("STEP 6.: Provide same Password.");
         registrationPage.provideSamePasswordForRegistrationForm("123456A");
 
         log.info("STEP 7.: Provide Public Info");
         registrationPage.providePublicInfo("Test Public Info");
+
+        log.info("STEP 8.: Click on Sign In button.");
+        boolean isSignInButtonPresented = registrationPage.isSignInButtonShown();
+        Assert.assertTrue(isSignInButtonPresented);
         registrationPage.clickOnSignInButton();
 
-        log.info("STEP 6.: Verify the Registration is successful");
+        log.info("STEP 9.: Verify the Registration is successful");
 
-        log.info("STEP 6.1.: Verify the Message for Successful Registration");
+        log.info("STEP 9.1.: Verify the Message for Successful Registration");
         String actualRegistrationMessage = registrationPage.getRegistrationActionMessage();
         Assert.assertEquals(actualRegistrationMessage, REGISTRATION_SUCCESSFUL_MSG);
 
         LoginPage loginPage = new LoginPage(super.driver, log);
-        homePage = new HomePage(super.driver, log);
 
-        log.info("STEP 6.2.: Verify the Log out Button is presented");
+        log.info("STEP 9.2.: Verify the Log out Button is presented");
         boolean isShownLogoutButton = loginPage.isLogoutButtonShown();
         Assert.assertTrue(isShownLogoutButton);
 
-        log.info("STEP 6.3.: Verify the Navigation bar Profile Link is presented");
+        log.info("STEP 9.3.: Verify the Navigation bar Profile Link is presented");
         boolean isNavBarProfileShown = homePage.isNavBarProfilePresented();
         Assert.assertTrue(isNavBarProfileShown);
 
-        log.info("STEP 6.4.: Verify the current URL is for Home Page.");
+        log.info("STEP 9.4.: Verify the current URL is for Home Page.");
         boolean isHomePageLoadedAgain = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoadedAgain);
 

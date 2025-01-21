@@ -40,7 +40,6 @@ public class RegistrationPage  extends BasePage {
         navigateTo(REGISTRATION_PAGE_URL);
     }
 
-
     public void provideUserName(String userName) {
         isPresented(regFormUserNameInputField);
         waitAndTypeTextInField(regFormUserNameInputField,userName);
@@ -78,13 +77,9 @@ public class RegistrationPage  extends BasePage {
 
     public String getRegistrationActionMessage(){
         wait.until(ExpectedConditions.visibilityOf(registrationFormToastMsg));
-        String msg = registrationFormToastMsg.getText();
-        return msg;
+        return registrationFormToastMsg.getText();
     }
 
-    public boolean signInButtonIsShown(){
-        isPresented(signInButton);
-        return true;
-    }
+    public boolean isSignInButtonShown(){ return isPresented(signInButton);}
 
 }

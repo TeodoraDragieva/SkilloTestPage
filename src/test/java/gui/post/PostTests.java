@@ -144,7 +144,7 @@ public class PostTests extends BaseTest {
         homePage.isNavBarHomeShown();
 
         log.info("STEP 5.2.: Verify if the URL is for the Home Page");
-        boolean isHomePageLoaded = HomePage.isUrlLoaded(HOME_PAGE_URL);
+        boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
 
         ProfilePage profilePage = new ProfilePage(super.driver,log);
@@ -154,16 +154,16 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 7.: The User is in the Other User Profile - Lora");
 
-        log.info("STEP 8.:The user has clicked on the first post of the Other User.");
+        log.info("STEP 8.: The user has clicked on the first post of the Other User.");
         profilePage.clickPost(0);
 
-        log.info("STEP 9.:The user has clicked on the like button.");
+        log.info("STEP 9. :The user has clicked on the like button.");
         profilePage.clickOnLikeButton();
 
-        log.info("STEP 10.:Verify if the Like Message is visible.");
+        log.info("STEP 10. :Verify if the Like Message is visible.");
         profilePage.isLikeMessageVisible();
 
-        log.info("STEP 11.:Close the post Modal.");
+        log.info("STEP 11. :Close the post Modal.");
         profilePage.closePostModal();
 
     }
@@ -207,7 +207,7 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 4.2.: Verify if the URL is for the Home Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
-        boolean isHomePageLoaded = HomePage.isUrlLoaded(HOME_PAGE_URL);
+        boolean isHomePageLoaded = homePage.isUrlLoaded (HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
 
         log.info("STEP 5.: The User selects Profile of other User - Lora");

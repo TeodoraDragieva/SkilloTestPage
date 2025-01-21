@@ -32,7 +32,7 @@ public class HomePage extends BasePage {
       return isPresented(navBarHome);
     }
 
-    public void clickOnNavBarHome() {waitAndClickOnWebElement(navBarHome);}
+    public void clickOnNavBarHome() { waitAndClickOnWebElement(navBarHome);}
 
     public boolean isNavLoginShown() {
      return isPresented(navBarLogin);
@@ -46,20 +46,11 @@ public class HomePage extends BasePage {
         waitAndClickOnWebElement(navBarProfile);
     }
 
-    public boolean isNavBarProfilePresented(){
-        isPresented(navBarProfile);
-        return true;
-    }
+    public boolean isNavBarProfilePresented(){ return isPresented(navBarProfile);}
 
     public void clickOnNavBarNewPost () {
        waitAndClickOnWebElement(navBarNewPost);
     }
 
-    public boolean isPageTitleCorrect() {
-        String actualTitle = driver.getTitle();
-        String expectedTitle = "ISkillo";
-        log.info("Verifying page title. Expected: " + expectedTitle + ", Actual: " + actualTitle);
-        return actualTitle.equals(expectedTitle);
-    }
 }
 

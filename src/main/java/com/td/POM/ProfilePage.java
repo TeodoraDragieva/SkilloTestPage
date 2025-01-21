@@ -36,7 +36,7 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath = "//a[@href='/users/38']")
     private WebElement selectUserProfile38;
     @FindBy(xpath = "//a[@class='post-user']")
-    private WebElement userLinkLocator;
+    private WebElement userProfileLink;
     @FindBy(css = "app-post.app-post")
     private List<WebElement> posts;
     @FindBy(css = "label.btn-private.active > input[type='radio']")
@@ -81,55 +81,6 @@ public class ProfilePage extends BasePage {
         }
     }
 
-    public int countAllPostsWithScroll() {
-        By postLocator = By.cssSelector("app-post.app-post");
-        int postCount = 0;
-        int newPostCount = 0;
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        do {
-            postCount = driver.findElements(postLocator).size();
-            scrollToBottom();  // Използваме новия метод
-
-            try {
-                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, postCount));
-            } catch (TimeoutException e) {
-                log.info("Reached the end of the page. Total posts: " + postCount);
-                break;
-            }
-
-            newPostCount = driver.findElements(postLocator).size();
-
-        } while (newPostCount > postCount);
-
-        return newPostCount;
-    }
-
-    public int countAllPostsWithScrollUp() {
-        By postLocator = By.cssSelector("app-post.app-post");
-        int postCount = driver.findElements(postLocator).size();
-        int previousPostCount;
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
-        do {
-            previousPostCount = postCount;
-            postCount = driver.findElements(postLocator).size();
-            scrollToTop();  // Използваме новия метод
-
-            try {
-                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, previousPostCount));
-            } catch (TimeoutException e) {
-                log.info("Reached the top of the page or no more new posts. Total posts: " + postCount);
-                break;
-            }
-        } while (postCount > previousPostCount);
-
-        return postCount;
-    }
-
-
     private boolean isElementVisible(WebElement element) {
         try {
             return wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
@@ -152,7 +103,7 @@ public class ProfilePage extends BasePage {
     }
 
     public void closePostModal() {
-        waitAndClickOnWebElement(userLinkLocator);
+        waitAndClickOnWebElement(userProfileLink);
     }
 
 }

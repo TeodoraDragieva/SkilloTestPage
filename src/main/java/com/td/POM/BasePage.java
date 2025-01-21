@@ -1,10 +1,7 @@
 package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
@@ -32,7 +29,6 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(textField));
         textField.clear();
         textField.sendKeys(inputText);
-
         waitPageTobeFullyLoaded();
     }
 
@@ -45,7 +41,7 @@ public class BasePage {
         waitPageTobeFullyLoaded();
     }
 
-    public static boolean isUrlLoaded(String pageURL) {
+    public boolean isUrlLoaded(String pageURL) {
         waitPageTobeFullyLoaded();
         return wait.until(ExpectedConditions.urlContains(pageURL));
     }
@@ -65,7 +61,7 @@ public class BasePage {
             log.info("# SHOWN  # Web element is shown with locator info" + li);
             isWebElmShown = true;
         } catch (TimeoutException e) {
-            log.error("# NOT SHOWN ! # Web element is NOT shown with locator info" + li);
+            log.error("# NOT SHOWN! # Web element is NOT shown with locator info" + li);
             isWebElmShown = false;
         }
         return isWebElmShown;
@@ -88,6 +84,61 @@ public class BasePage {
     public void scrollToTop() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollTo(0, 0);");
+    }
+
+    public boolean isPageTitleCorrect() {
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "ISkillo";
+        log.info("Verifying page title. Expected: " + expectedTitle + ", Actual: " + actualTitle);
+        return actualTitle.equals(expectedTitle);
+    }
+
+    public int countAllPostsWithScroll() {
+        By postLocator = By.cssSelector("app-post.app-post");
+        int postCount = 0;
+        int newPostCount = 0;
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        do {
+            postCount = driver.findElements(postLocator).size();
+            scrollToBottom();
+
+            try {
+                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, postCount));
+            } catch (TimeoutException e) {
+                log.info("Reached the end of the page. Total posts: " + postCount);
+                break;
+            }
+
+            newPostCount = driver.findElements(postLocator).size();
+
+        } while (newPostCount > postCount);
+
+        return newPostCount;
+    }
+
+    public int countAllPostsWithScrollUp() {
+        By postLocator = By.cssSelector("app-post.app-post");
+        int postCount = driver.findElements(postLocator).size();
+        int previousPostCount;
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        do {
+            previousPostCount = postCount;
+            postCount = driver.findElements(postLocator).size();
+            scrollToTop();
+
+            try {
+                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, previousPostCount));
+            } catch (TimeoutException e) {
+                log.info("Reached the top of the page or no more new posts. Total posts: " + postCount);
+                break;
+            }
+        } while (postCount > previousPostCount);
+
+        return postCount;
     }
 
 }
