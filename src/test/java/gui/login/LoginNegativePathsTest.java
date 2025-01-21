@@ -44,12 +44,12 @@ public class LoginNegativePathsTest extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle2,LOGIN_FORM_TITLE);
 
         log.info("STEP 6.1.3. Verify that the Login Button From Login Form is presented");
-        boolean isLoginButtonStayVisile = loginPage.loginButtonIsShown();
-        Assert.assertTrue(isLoginButtonStayVisile);
+        boolean isLoginButtonStayVisbile = loginPage.loginButtonIsShown();
+        Assert.assertTrue(isLoginButtonStayVisbile, "The login Button is not presented!");
 
         log.info("STEP 6.1.3. Verify that the User is still on the Login Page.");
         boolean isLoginPageStillLoaded = loginPage.isUrlLoaded(LOGIN_PAGE);
-        Assert.assertTrue(isLoginPageStillLoaded);
+        Assert.assertTrue(isLoginPageStillLoaded, "The Login Page is not loaded!");
     }
 //
 //    @Test

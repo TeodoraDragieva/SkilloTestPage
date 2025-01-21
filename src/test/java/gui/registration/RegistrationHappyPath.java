@@ -70,15 +70,15 @@ public class RegistrationHappyPath extends BaseTest {
 
         log.info("STEP 9.2.: Verify the Log out Button is presented");
         boolean isShownLogoutButton = loginPage.isLogoutButtonShown();
-        Assert.assertTrue(isShownLogoutButton);
+        Assert.assertTrue(isShownLogoutButton, "The Logout Button is not presented!");
 
         log.info("STEP 9.3.: Verify the Navigation bar Profile Link is presented");
         boolean isNavBarProfileShown = homePage.isNavBarProfilePresented();
-        Assert.assertTrue(isNavBarProfileShown);
+        Assert.assertTrue(isNavBarProfileShown, "The Navigation Bar Profile Link is not presented!");
 
         log.info("STEP 9.4.: Verify the current URL is for Home Page.");
         boolean isHomePageLoadedAgain = homePage.isUrlLoaded(HOME_PAGE_URL);
-        Assert.assertTrue(isHomePageLoadedAgain);
+        Assert.assertTrue(isHomePageLoadedAgain,"The Home page is not loaded!");
 
     }
     }

@@ -33,8 +33,8 @@ public class PostTests extends BaseTest {
         Assert.assertTrue(isTitleCorrect, "Page title is incorrect!");
 
         log.info("STEP 1.1.2.: Verify that the Navigation Bar Home is presented.");
-        boolean isShownNavBarHome = homePage.isNavBarHomeShown();
-        Assert.assertTrue(isShownNavBarHome);
+        boolean isShownNavBarHome = homePage.isNavBarHomeLinkShown();
+        Assert.assertTrue(isShownNavBarHome, "Navigation Bar Home link is NOT presented.");
 
         log.info("STEP 1.1.3.: Verify that the Login link is presented.");
         boolean isShownNavBarLoginLink = homePage.isNavLoginShown();
@@ -53,7 +53,7 @@ public class PostTests extends BaseTest {
         loginPage.loginWithUserAndPassword(testUser, testPassword);
 
         log.info ("STEP 4.: Verify the navigation bar Home link is presented.");
-        homePage.isNavBarHomeShown();
+        homePage.isNavBarHomeLinkShown();
 
         log.info ("STEP 5.: Verify the navigation bare Profile link is presented and click on it.");
         homePage.clickOnNavBarProfile();
@@ -119,7 +119,7 @@ public class PostTests extends BaseTest {
         Assert.assertTrue(isTitleCorrect, "Page title is incorrect!");
 
         log.info("STEP 1.1.2.: Verify that the Navigation Bar Home is presented.");
-        boolean isShownNavBarHome = homePage.isNavBarHomeShown();
+        boolean isShownNavBarHome = homePage.isNavBarHomeLinkShown();
         Assert.assertTrue(isShownNavBarHome);
 
         log.info("STEP 1.1.3.: Verify that the Login link is presented.");
@@ -141,7 +141,7 @@ public class PostTests extends BaseTest {
         log.info("STEP 5.: Verify the User is navigated to the Home Page");
 
         log.info ("STEP 5.1.: Verify the navigation bare Home link is presented.");
-        homePage.isNavBarHomeShown();
+        homePage.isNavBarHomeLinkShown();
 
         log.info("STEP 5.2.: Verify if the URL is for the Home Page");
         boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
@@ -181,7 +181,7 @@ public class PostTests extends BaseTest {
         Assert.assertTrue(isTitleCorrect, "Page title is incorrect!");
 
         log.info("STEP 1.1.2.: Verify that the Navigation Bar Home is presented.");
-        boolean isShownNavBarHome = homePage.isNavBarHomeShown();
+        boolean isShownNavBarHome = homePage.isNavBarHomeLinkShown();
         Assert.assertTrue(isShownNavBarHome);
 
         log.info("STEP 1.1.3.: Verify that the Login link is presented.");
@@ -203,7 +203,7 @@ public class PostTests extends BaseTest {
         log.info("STEP 4.: Verify the User is navigated to the Home Page");
 
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
-        homePage.isNavBarHomeShown();
+        homePage.isNavBarHomeLinkShown();
 
         log.info("STEP 4.2.: Verify if the URL is for the Home Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
@@ -213,18 +213,18 @@ public class PostTests extends BaseTest {
         log.info("STEP 5.: The User selects Profile of other User - Lora");
         profilePage.clickOnUserWithUploadedPic();
 
-        log.info("STEP 7.: The User is in the Other User Profile - Lora");
+        log.info("STEP 6.: The User is in the Other User Profile - Lora");
 
-        log.info("STEP 8.: The user has clicked on the first post of the Other User.");
+        log.info("STEP 7.: The user has clicked on the first post of the Other User.");
         profilePage.clickPost(0);
 
-        log.info("STEP 9.: The user click on the Like button in order to dislike post.");
+        log.info("STEP 8.: The user click on the Like button in order to dislike post.");
         profilePage.clickOnLikeButton();
 
-        log.info("STEP 10.: Verify if the Dislike Message is visible.");
+        log.info("STEP 9.: Verify if the Dislike Message is visible.");
         profilePage.isDislikeMessageVisible();
 
-        log.info("STEP 11.: Close the post Modal.");
+        log.info("STEP 10.: Close the post Modal.");
         profilePage.closePostModal();
 
     }

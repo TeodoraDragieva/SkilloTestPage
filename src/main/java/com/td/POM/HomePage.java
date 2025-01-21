@@ -28,7 +28,7 @@ public class HomePage extends BasePage {
         navigateTo(HOME_PAGE_URL);
     }
 
-    public boolean isNavBarHomeShown() {
+    public boolean isNavBarHomeLinkShown() {
       return isPresented(navBarHome);
     }
 

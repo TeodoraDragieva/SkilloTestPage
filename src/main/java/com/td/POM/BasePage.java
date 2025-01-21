@@ -29,8 +29,23 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(textField));
         textField.clear();
         textField.sendKeys(inputText);
-        waitPageTobeFullyLoaded();
+
+        for (int i = 0; i < 3; i++) {
+            Object ElementText = null;
+            if (inputText.equals(textField.getText())) {
+                log.info("Text field successfully populated with: " + inputText);
+                return;
+            }
+            log.warn("Text field did not populate correctly. Retrying.");
+            textField.clear();
+            textField.sendKeys(inputText);
+        }
+
+        if (inputText.equals(textField.getText())) {
+            throw new IllegalStateException("Failed to populate text field with: " + inputText);
+        }
     }
+
 
     public void navigateTo(String pageURLSuffix) {
         String currentURL = BASE_URL + pageURLSuffix;

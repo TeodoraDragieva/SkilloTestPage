@@ -57,8 +57,7 @@ public class LoginPage extends BasePage {
     }
 
     public boolean loginButtonIsShown(){
-        isPresented(loginFormSubmitButton);
-        return true;
+        return isPresented(loginFormSubmitButton);
     }
     
     public void loginWithUserAndPassword(String user, String password){
@@ -74,8 +73,7 @@ public class LoginPage extends BasePage {
 
     public String getLoginActionMessage(){
         wait.until(ExpectedConditions.visibilityOf(loginFormToastMessage));
-        String msg = loginFormToastMessage.getText();
-        return msg;
+        return loginFormToastMessage.getText();
     }
 
     public boolean isLogoutButtonShown() {

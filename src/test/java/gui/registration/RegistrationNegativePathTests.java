@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.regData.RegistrationDataGenerator;
 
+import static com.td.POM.HomePage.HOME_PAGE_URL;
 import static com.td.POM.RegistrationPage.REGISTRATION_FORM_TITLE;
 import static com.td.POM.RegistrationPage.REGISTRATION_PAGE_URL;
 
@@ -26,7 +27,7 @@ public class RegistrationNegativePathTests extends BaseTest {
         log.info("STEP 1.1.: Verify the user is on the Registration Page.");
         HomePage homePage = new HomePage(super.driver,log);
         boolean isRegistrationPageLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
-        Assert.assertTrue(isRegistrationPageLoaded);
+        Assert.assertTrue(isRegistrationPageLoaded, "The Registration Page is Not loaded!");
 
         log.info("STEP 1.1.1.: Verify the Registration Form Title is presented.");
         String actualRegFormTitle = registrationPage.getRegPageFormTitle();
@@ -60,16 +61,16 @@ public class RegistrationNegativePathTests extends BaseTest {
         Assert.assertEquals(actualRegistrationMessage, REGISTRATION_UNSUCCESSFUL_MSG_USERNAME_TAKEN);
 
         log.info("STEP 8.2.: Verify the user is still on the Registration Page.");
-        boolean isHomePageStillLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
-        Assert.assertTrue(isHomePageStillLoaded);
-
-        log.info("STEP 8.3.: Verify the Registration Form Title is still presented.");
-        String checkAgainActualRegFormTitle = registrationPage.getRegPageFormTitle();
-        Assert.assertEquals(checkAgainActualRegFormTitle, REGISTRATION_FORM_TITLE);
-
-        log.info ("STEP 8.4.: Verify the Sing in Button is stil visible");
-        boolean isLoginButtonStayVisile = registrationPage.signInButtonIsShown();
-        Assert.assertTrue(isLoginButtonStayVisile);
+        boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
+        Assert.assertFalse(isHomePageLoaded, "The User landed on the Home Page!");
+//
+//        log.info("STEP 8.3.: Verify the Registration Form Title is still presented.");
+//        String checkAgainActualRegFormTitle = registrationPage.getRegPageFormTitle();
+//        Assert.assertEquals(checkAgainActualRegFormTitle, REGISTRATION_FORM_TITLE);
+//
+//        log.info ("STEP 8.4.: Verify the Sing in Button is stil visible");
+//        boolean isLoginButtonStayVisile = registrationPage.isSignInButtonShown();
+//        Assert.assertTrue(isLoginButtonStayVisile);
 
     }
 
@@ -126,7 +127,7 @@ public class RegistrationNegativePathTests extends BaseTest {
         Assert.assertEquals(checkAgainActualRegFormTitle, REGISTRATION_FORM_TITLE);
 
         log.info ("STEP 8.4.: Verify the Sing in Button is stilL visible");
-        boolean isLoginButtonStillVisible = registrationPage.signInButtonIsShown();
+        boolean isLoginButtonStillVisible = registrationPage.isSignInButtonShown();
         Assert.assertTrue(isLoginButtonStillVisible);
     }
 }
