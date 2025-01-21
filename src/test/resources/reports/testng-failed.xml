@@ -12,6 +12,15 @@
           <include name="verifyUserCanDislikePost"/>
         </methods>
       </class> <!-- gui.post.PostTests -->
+      <class name="gui.registration.RegistrationHappyPath">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="cleanFiles"/>
+          <include name="verifyUserCanRegisterWithValidData"/>
+          <include name="setupTestSuite"/>
+        </methods>
+      </class> <!-- gui.registration.RegistrationHappyPath -->
       <class name="gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost">
         <methods>
           <include name="tearDown"/>

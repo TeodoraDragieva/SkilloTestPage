@@ -11,8 +11,8 @@ import java.time.Duration;
 
 public class BasePage {
     private static final String BASE_URL = "http://training.skillo-bg.com:4300";
-    WebDriver driver;
-    WebDriverWait wait;
+    static WebDriver driver;
+    static WebDriverWait wait;
     Logger log;
 
     public BasePage(WebDriver driver, Logger log) {
@@ -45,12 +45,12 @@ public class BasePage {
         waitPageTobeFullyLoaded();
     }
 
-    public boolean isURLLoaded(String pageURL) {
+    public static boolean isUrlLoaded(String pageURL) {
         waitPageTobeFullyLoaded();
         return wait.until(ExpectedConditions.urlContains(pageURL));
     }
 
-    public void waitPageTobeFullyLoaded() {
+    public static void waitPageTobeFullyLoaded() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("return document.readyState").equals("complete");
     }

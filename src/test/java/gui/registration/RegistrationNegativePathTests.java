@@ -15,7 +15,6 @@ public class RegistrationNegativePathTests extends BaseTest {
     public static final String REGISTRATION_UNSUCCESSFUL_MSG_USERNAME_TAKEN = "Username taken";
     public static final String REGISTRATION_UNSUCCESSFUL_MSG_EMAIL_TAKEN = "Email taken";
 
-
     @Test (priority = 0)
     public void verifyTheUserCannotRegisterWithTakenUsername() throws InterruptedException {
 
@@ -26,7 +25,7 @@ public class RegistrationNegativePathTests extends BaseTest {
 
         log.info("STEP 1.1.: Verify the user is on the Registration Page.");
         HomePage homePage = new HomePage(super.driver,log);
-        boolean isRegistrationPageLoaded = homePage.isURLLoaded(REGISTRATION_PAGE_URL);
+        boolean isRegistrationPageLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
         Assert.assertTrue(isRegistrationPageLoaded);
 
         log.info("STEP 1.1.1.: Verify the Registration Form Title is presented.");
@@ -36,8 +35,8 @@ public class RegistrationNegativePathTests extends BaseTest {
         log.info("STEP 2.: Provide Already Taken username.");
         registrationPage.provideUserName("72011Student");
 
-        log.info("STEP 3.: Provide an email.");
-        registrationPage.provideEmail("test@email.com");
+        log.info("STEP 3.: Provide not taken email.");
+        registrationPage.provideEmail("test999@email.com");
 
         log.info("STEP 4.: Provide Date of Birth.");
         registrationPage.provideDateOfBirth("01/01/1990");
@@ -61,7 +60,7 @@ public class RegistrationNegativePathTests extends BaseTest {
         Assert.assertEquals(actualRegistrationMessage, REGISTRATION_UNSUCCESSFUL_MSG_USERNAME_TAKEN);
 
         log.info("STEP 8.2.: Verify the user is still on the Registration Page.");
-        boolean isHomePageStillLoaded = homePage.isURLLoaded(REGISTRATION_PAGE_URL);
+        boolean isHomePageStillLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
         Assert.assertTrue(isHomePageStillLoaded);
 
         log.info("STEP 8.3.: Verify the Registration Form Title is still presented.");
@@ -77,16 +76,14 @@ public class RegistrationNegativePathTests extends BaseTest {
     @Test (priority = 1)
     public void verifyTheUserCannotRegisterWithTakenEmail() throws InterruptedException {
 
-        String USERNAME = RegistrationDataGenerator.createUser();
-
         RegistrationPage registrationPage = new RegistrationPage(super.driver, log);
 
-        log.info("STEP 1: The Unregistered User is landing on the Registration Page.");
+        log.info("STEP 1: Unregistered User is landing on the Registration Page.");
         registrationPage.navigateToRegistrationPage();
 
-        log.info("STEP 1.1.: Verify the user is on the Registration Page.");
+        log.info("STEP 1.1.: Verify the User is on the Registration Page.");
         HomePage homePage = new HomePage(super.driver,log);
-        boolean isRegistrationPageLoaded = homePage.isURLLoaded(REGISTRATION_PAGE_URL);
+        boolean isRegistrationPageLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
         Assert.assertTrue(isRegistrationPageLoaded);
 
         log.info("STEP 1.1.1.: Verify the Registration Form Title is presented.");
@@ -97,7 +94,7 @@ public class RegistrationNegativePathTests extends BaseTest {
         registrationPage.provideUserName("nqmAtakavuser12");
 
         log.info("STEP 3.: Provide already taken email.");
-        registrationPage.provideEmail("test@email.com");
+        registrationPage.provideEmail("tedi90@abv.bg");
 
         log.info("STEP 4.: Provide Date of Birth.");
         registrationPage.provideDateOfBirth("01/01/1990");
@@ -114,22 +111,22 @@ public class RegistrationNegativePathTests extends BaseTest {
         log.info("STEP 7.: Submit the Sing In Button.");
         registrationPage.clickOnSignInButton();
 
-        log.info("STEP 8.: Verify the Registration Was Not successful");
+        log.info("STEP 8.: Verify the Registration Was Not successful.");
 
         log.info("STEP 8.1.: Verify the Message for Already Taken User is presented");
         String actualRegistrationMessage = registrationPage.getRegistrationActionMessage();
         Assert.assertEquals(actualRegistrationMessage, REGISTRATION_UNSUCCESSFUL_MSG_EMAIL_TAKEN);
 
         log.info("STEP 8.2.: Verify the user is still on the Registration Page.");
-        boolean isHomePageStillLoaded = homePage.isURLLoaded(REGISTRATION_PAGE_URL);
+        boolean isHomePageStillLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
         Assert.assertTrue(isHomePageStillLoaded);
 
         log.info("STEP 8.3.: Verify the Registration Form Title is still presented.");
         String checkAgainActualRegFormTitle = registrationPage.getRegPageFormTitle();
         Assert.assertEquals(checkAgainActualRegFormTitle, REGISTRATION_FORM_TITLE);
 
-        log.info ("STEP 8.4.: Verify the Sing in Button is stil visible");
-        boolean isLoginButtonStillVisile = registrationPage.signInButtonIsShown();
-        Assert.assertTrue(isLoginButtonStillVisile);
+        log.info ("STEP 8.4.: Verify the Sing in Button is stilL visible");
+        boolean isLoginButtonStillVisible = registrationPage.signInButtonIsShown();
+        Assert.assertTrue(isLoginButtonStillVisible);
     }
 }

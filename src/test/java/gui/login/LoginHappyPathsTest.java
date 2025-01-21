@@ -65,7 +65,7 @@ public class LoginHappyPathsTest extends BaseTest {
         Assert.assertTrue(isNavBarProfileShown);
 
         log.info("STEP 6.4.: Verify the current URL is for Home Page.");
-        boolean isHomePageLoaded = homePage.isURLLoaded(HOME_PAGE_URL);
+        boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
     }
 

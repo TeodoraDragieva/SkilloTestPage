@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage {
-    private static final String HOME_PAGE_URL = "/posts/all";
+    public static final String HOME_PAGE_URL = "/posts/all";
 
     @FindBy(id = "nav-link-home")
     private WebElement navBarHome;

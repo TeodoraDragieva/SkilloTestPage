@@ -48,7 +48,7 @@ public class LoginNegativePathsTest extends BaseTest {
         Assert.assertTrue(isLoginButtonStayVisile);
 
         log.info("STEP 6.1.3. Verify that the User is still on the Login Page.");
-        boolean isLoginPageStillLoaded = loginPage.isURLLoaded(LOGIN_PAGE);
+        boolean isLoginPageStillLoaded = loginPage.isUrlLoaded(LOGIN_PAGE);
         Assert.assertTrue(isLoginPageStillLoaded);
     }
 //

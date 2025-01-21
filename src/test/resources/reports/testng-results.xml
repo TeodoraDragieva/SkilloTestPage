@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="5" failed="2" skipped="0">
+<testng-results ignored="0" total="7" passed="4" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-12T01:04:38 EET" name="All Test Suite" finished-at="2025-01-12T01:05:48 EET" duration-ms="70218">
+  <suite started-at="2025-01-21T00:58:28 EET" name="All Test Suite" finished-at="2025-01-21T00:59:42 EET" duration-ms="74626">
     <groups>
     </groups>
-    <test started-at="2025-01-12T01:04:38 EET" name="C:/CODE/SELENIUM/SKILLO/TAF_S4_TNG7_V1" finished-at="2025-01-12T01:05:48 EET" duration-ms="70218">
+    <test started-at="2025-01-21T00:58:28 EET" name="C:/CODE/SELENIUM/SKILLO/TAF_S4_TNG7_V1" finished-at="2025-01-21T00:59:42 EET" duration-ms="74626">
       <class name="gui.post.PostTests">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:04:53 EET" name="setUp" finished-at="2025-01-12T01:04:54 EET" duration-ms="1040" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:58:44 EET" name="setUp" finished-at="2025-01-21T00:58:45 EET" duration-ms="1169" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,11 +23,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserCanCreatePost()[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:04:54 EET" name="verifyUserCanCreatePost" finished-at="2025-01-12T01:05:05 EET" duration-ms="10687" status="PASS">
+        <test-method signature="verifyUserCanCreatePost()[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:58:45 EET" name="verifyUserCanCreatePost" finished-at="2025-01-21T00:59:12 EET" duration-ms="26896" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCanCreatePost -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:05 EET" name="tearDown" finished-at="2025-01-12T01:05:05 EET" duration-ms="337" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:12 EET" name="tearDown" finished-at="2025-01-21T00:59:12 EET" duration-ms="293" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,7 +38,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:05 EET" name="setUp" finished-at="2025-01-12T01:05:07 EET" duration-ms="1199" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:12 EET" name="setUp" finished-at="2025-01-21T00:59:14 EET" duration-ms="1120" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -54,17 +54,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserCanDislikePost()[pri:2, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:07 EET" name="verifyUserCanDislikePost" finished-at="2025-01-12T01:05:36 EET" duration-ms="29394" status="FAIL">
+        <test-method signature="verifyUserCanDislikePost()[pri:2, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:14 EET" name="verifyUserCanDislikePost" finished-at="2025-01-21T00:59:21 EET" duration-ms="6994" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(@aria-label,'Post disliked')]' (tried for 5 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[Expected condition failed: waiting for url to contain "/users/5646". Current url: "http://training.skillo-bg.com:4300/posts/all" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58107}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58107/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ca9c755e3353a8cc5b255beed03e4c1a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(@aria-label,'Post disliked')]' (tried for 5 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "/users/5646". Current url: "http://training.skillo-bg.com:4300/posts/all" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58107}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58107/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ca9c755e3353a8cc5b255beed03e4c1a
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.td.POM.ProfilePage.isDislikeMessageVisible(ProfilePage.java:114)
-at gui.post.PostTests.verifyUserCanDislikePost(PostTests.java:101)
+at com.td.POM.BasePage.isURLLoaded(BasePage.java:50)
+at gui.post.PostTests.verifyUserCanDislikePost(PostTests.java:211)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -95,44 +105,13 @@ at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter
 at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
 at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@aria-label,'Post disliked')]"}
-  (Session info: chrome=131.0.6778.205)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [da678df95d8baf8d07c981d81a21b909, findElement {using=xpath, value=//div[contains(@aria-label,'Post disliked')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54000}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54000/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: da678df95d8baf8d07c981d81a21b909
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy28.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 32 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCanDislikePost -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:36 EET" name="tearDown" finished-at="2025-01-12T01:05:36 EET" duration-ms="468" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:21 EET" name="tearDown" finished-at="2025-01-21T00:59:21 EET" duration-ms="346" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -143,7 +122,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:36 EET" name="setUp" finished-at="2025-01-12T01:05:38 EET" duration-ms="1560" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:21 EET" name="setUp" finished-at="2025-01-21T00:59:22 EET" duration-ms="1058" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -152,22 +131,22 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
             </param>
             <param index="1">
               <value>
-                <![CDATA[public void gui.post.PostTests.verifyUserCanDeletePost() throws java.lang.InterruptedException]]>
+                <![CDATA[public void gui.post.PostTests.verifyUserCanDeletePost()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserCanDeletePost()[pri:4, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:38 EET" name="verifyUserCanDeletePost" finished-at="2025-01-12T01:05:41 EET" duration-ms="3093" status="PASS">
+        <test-method signature="verifyUserCanDeletePost()[pri:3, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:22 EET" name="verifyUserCanDeletePost" finished-at="2025-01-21T00:59:39 EET" duration-ms="16569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCanDeletePost -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-12T01:05:41 EET" name="tearDown" finished-at="2025-01-12T01:05:41 EET" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.post.PostTests@31304f14]" started-at="2025-01-21T00:59:39 EET" name="tearDown" finished-at="2025-01-21T00:59:39 EET" duration-ms="310" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserCanDeletePost status=SUCCESS method=PostTests.verifyUserCanDeletePost()[pri:4, instance:gui.post.PostTests@31304f14] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserCanDeletePost status=SUCCESS method=PostTests.verifyUserCanDeletePost()[pri:3, instance:gui.post.PostTests@31304f14] output={null}]]]>
               </value>
             </param>
           </params>
@@ -176,7 +155,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
         </test-method> <!-- tearDown -->
       </class> <!-- gui.post.PostTests -->
       <class name="gui.login.LoginPageLayoutTest">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.login.LoginPageLayoutTest@6302bbb1]" started-at="2025-01-12T01:04:51 EET" name="setUp" finished-at="2025-01-12T01:04:52 EET" duration-ms="1082" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.login.LoginPageLayoutTest@6302bbb1]" started-at="2025-01-21T00:58:42 EET" name="setUp" finished-at="2025-01-21T00:58:43 EET" duration-ms="1146" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -192,11 +171,11 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginPageLayout()[pri:0, instance:gui.login.LoginPageLayoutTest@6302bbb1]" started-at="2025-01-12T01:04:52 EET" name="verifyLoginPageLayout" finished-at="2025-01-12T01:04:53 EET" duration-ms="849" status="PASS">
+        <test-method signature="verifyLoginPageLayout()[pri:0, instance:gui.login.LoginPageLayoutTest@6302bbb1]" started-at="2025-01-21T00:58:43 EET" name="verifyLoginPageLayout" finished-at="2025-01-21T00:58:44 EET" duration-ms="848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageLayout -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.login.LoginPageLayoutTest@6302bbb1]" started-at="2025-01-12T01:04:53 EET" name="tearDown" finished-at="2025-01-12T01:04:53 EET" duration-ms="184" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.login.LoginPageLayoutTest@6302bbb1]" started-at="2025-01-21T00:58:44 EET" name="tearDown" finished-at="2025-01-21T00:58:44 EET" duration-ms="335" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -209,11 +188,11 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
         </test-method> <!-- tearDown -->
       </class> <!-- gui.login.LoginPageLayoutTest -->
       <class name="gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost">
-        <test-method is-config="true" signature="setupTestSuite()[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-12T01:04:38 EET" name="setupTestSuite" finished-at="2025-01-12T01:04:38 EET" duration-ms="13" status="PASS">
+        <test-method is-config="true" signature="setupTestSuite()[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-21T00:58:28 EET" name="setupTestSuite" finished-at="2025-01-21T00:58:28 EET" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTestSuite -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-12T01:04:38 EET" name="setUp" finished-at="2025-01-12T01:04:40 EET" duration-ms="2152" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-21T00:58:28 EET" name="setUp" finished-at="2025-01-21T00:58:30 EET" duration-ms="2466" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -229,29 +208,29 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="basicEndToEnd()[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-12T01:04:40 EET" name="basicEndToEnd" finished-at="2025-01-12T01:04:48 EET" duration-ms="7739" status="FAIL">
+        <test-method signature="basicEndToEnd()[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-21T00:58:30 EET" name="basicEndToEnd" finished-at="2025-01-21T00:58:38 EET" duration-ms="7600" status="FAIL">
           <exception class="org.openqa.selenium.InvalidArgumentException">
             <message>
               <![CDATA[invalid argument: File not found : C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\src\test\resources\upload\n3Test.jpg
-  (Session info: chrome=131.0.6778.205)
+  (Session info: chrome=131.0.6778.265)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [94f8f4936cce7af8b67453e5d809a264, sendKeysToElement {value=[Ljava.lang.CharSequence;@3f93e4a8, id=f.B315154FCED5D970AA467F4CB32F4285.d.C8049303E1957C4F9679C6A5762FB97D.e.48}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53857}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53857/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (94f8f4936cce7af8b67453e5d809a264)] -> css selector: .file[type='file']]
-Session ID: 94f8f4936cce7af8b67453e5d809a264]]>
+Command: [97037185ed3452098cee042ae9a81c54, sendKeysToElement {id=f.61AAB83872E1815939717337121BC71A.d.06538FD80E179E2C22D4002B5DD72BE7.e.50, value=[Ljava.lang.CharSequence;@12b5454f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57970/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (97037185ed3452098cee042ae9a81c54)] -> css selector: .file[type='file']]
+Session ID: 97037185ed3452098cee042ae9a81c54]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.InvalidArgumentException: invalid argument: File not found : C:\Users\Teddy\Documents\GitHub\SKILLO_AT_16_TAF\src\test\resources\upload\n3Test.jpg
-  (Session info: chrome=131.0.6778.205)
+  (Session info: chrome=131.0.6778.265)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [94f8f4936cce7af8b67453e5d809a264, sendKeysToElement {value=[Ljava.lang.CharSequence;@3f93e4a8, id=f.B315154FCED5D970AA467F4CB32F4285.d.C8049303E1957C4F9679C6A5762FB97D.e.48}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53857}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53857/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (94f8f4936cce7af8b67453e5d809a264)] -> css selector: .file[type='file']]
-Session ID: 94f8f4936cce7af8b67453e5d809a264
+Command: [97037185ed3452098cee042ae9a81c54, sendKeysToElement {id=f.61AAB83872E1815939717337121BC71A.d.06538FD80E179E2C22D4002B5DD72BE7.e.50, value=[Ljava.lang.CharSequence;@12b5454f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.265, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Teddy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57970}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57970/devtoo..., se:cdpVersion: 131.0.6778.265, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (97037185ed3452098cee042ae9a81c54)] -> css selector: .file[type='file']]
+Session ID: 97037185ed3452098cee042ae9a81c54
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -268,7 +247,7 @@ at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethod
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 at jdk.proxy2/jdk.proxy2.$Proxy28.sendKeys(Unknown Source)
-at com.td.POM.PostPage.uploadPicture(PostPage.java:51)
+at com.td.POM.PostPage.uploadPicture(PostPage.java:57)
 at gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost.basicEndToEnd(VerifyUserCanRegisterLoginUpdateProfilePost.java:31)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -306,7 +285,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basicEndToEnd -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-12T01:04:48 EET" name="tearDown" finished-at="2025-01-12T01:04:48 EET" duration-ms="341" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-21T00:58:38 EET" name="tearDown" finished-at="2025-01-21T00:58:38 EET" duration-ms="414" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -317,13 +296,13 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="cleanFiles()[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-12T01:05:48 EET" name="cleanFiles" finished-at="2025-01-12T01:05:48 EET" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="cleanFiles()[pri:0, instance:gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost@799f10e1]" started-at="2025-01-21T00:59:42 EET" name="cleanFiles" finished-at="2025-01-21T00:59:42 EET" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanFiles -->
       </class> <!-- gui.e2e.VerifyUserCanRegisterLoginUpdateProfilePost -->
       <class name="gui.registration.RegistrationHappyPath">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150]" started-at="2025-01-12T01:05:41 EET" name="setUp" finished-at="2025-01-12T01:05:42 EET" duration-ms="1129" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150]" started-at="2025-01-21T00:59:39 EET" name="setUp" finished-at="2025-01-21T00:59:40 EET" duration-ms="1081" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -339,15 +318,61 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserCanRegisterWithValidData()[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150]" started-at="2025-01-12T01:05:42 EET" name="verifyUserCanRegisterWithValidData" finished-at="2025-01-12T01:05:48 EET" duration-ms="5312" status="PASS">
+        <test-method signature="verifyUserCanRegisterWithValidData()[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150]" started-at="2025-01-21T00:59:40 EET" name="verifyUserCanRegisterWithValidData" finished-at="2025-01-21T00:59:42 EET" duration-ms="2138" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Successful register!] but found [Username taken]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Successful register!] but found [Username taken]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at gui.registration.RegistrationHappyPath.verifyUserCanRegisterWithValidData(RegistrationHappyPath.java:63)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCanRegisterWithValidData -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150]" started-at="2025-01-12T01:05:48 EET" name="tearDown" finished-at="2025-01-12T01:05:48 EET" duration-ms="168" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150]" started-at="2025-01-21T00:59:42 EET" name="tearDown" finished-at="2025-01-21T00:59:42 EET" duration-ms="389" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserCanRegisterWithValidData status=SUCCESS method=RegistrationHappyPath.verifyUserCanRegisterWithValidData()[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserCanRegisterWithValidData status=FAILURE method=RegistrationHappyPath.verifyUserCanRegisterWithValidData()[pri:0, instance:gui.registration.RegistrationHappyPath@34a3d150] output={null}]]]>
               </value>
             </param>
           </params>
@@ -356,7 +381,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
         </test-method> <!-- tearDown -->
       </class> <!-- gui.registration.RegistrationHappyPath -->
       <class name="gui.login.LoginNegativePathsTest">
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.login.LoginNegativePathsTest@4135c3b]" started-at="2025-01-12T01:04:48 EET" name="setUp" finished-at="2025-01-12T01:04:49 EET" duration-ms="1332" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.reflect.Method)[pri:0, instance:gui.login.LoginNegativePathsTest@4135c3b]" started-at="2025-01-21T00:58:38 EET" name="setUp" finished-at="2025-01-21T00:58:40 EET" duration-ms="1381" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -372,11 +397,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserCannotLoginWithWrongUserName()[pri:0, instance:gui.login.LoginNegativePathsTest@4135c3b]" started-at="2025-01-12T01:04:49 EET" name="verifyUserCannotLoginWithWrongUserName" finished-at="2025-01-12T01:04:51 EET" duration-ms="1764" status="PASS">
+        <test-method signature="verifyUserCannotLoginWithWrongUserName()[pri:0, instance:gui.login.LoginNegativePathsTest@4135c3b]" started-at="2025-01-21T00:58:40 EET" name="verifyUserCannotLoginWithWrongUserName" finished-at="2025-01-21T00:58:42 EET" duration-ms="1797" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCannotLoginWithWrongUserName -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.login.LoginNegativePathsTest@4135c3b]" started-at="2025-01-12T01:04:51 EET" name="tearDown" finished-at="2025-01-12T01:04:51 EET" duration-ms="161" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:gui.login.LoginNegativePathsTest@4135c3b]" started-at="2025-01-21T00:58:42 EET" name="tearDown" finished-at="2025-01-21T00:58:42 EET" duration-ms="195" status="PASS">
           <params>
             <param index="0">
               <value>

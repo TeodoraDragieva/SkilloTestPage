@@ -4,7 +4,6 @@ import com.td.POM.*;
 import com.td.POM.HomePage;
 import com.td.POM.ProfilePage;
 import gui.base.BaseTest;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.File;
@@ -15,7 +14,8 @@ import static com.td.POM.ProfilePage.PROFILE_PAGE;
 public class PostTests extends BaseTest {
     public static final String testUser = "testingDemos";
     public static final String testPassword = "testing";
-    public static final String caption = "Teddy is Testing the create post caption";
+    public static final String caption = "Testing the create post caption";
+    private static final String HOME_PAGE_URL = "/posts/all";
     File postPicture = new File("src/test/resources/upload/pirin.jpg");
     private static final String UPLOAD_FORM_TITLE = "Post a picture to share with your awesome followers";
 
@@ -52,7 +52,7 @@ public class PostTests extends BaseTest {
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
         loginPage.loginWithUserAndPassword(testUser, testPassword);
 
-        log.info ("STEP 4.: Verify the navigation bare Home link is presented.");
+        log.info ("STEP 4.: Verify the navigation bar Home link is presented.");
         homePage.isNavBarHomeShown();
 
         log.info ("STEP 5.: Verify the navigation bare Profile link is presented and click on it.");
@@ -62,7 +62,7 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 6.1.: Verify if the URL is for the Profile Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
-        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
+        boolean isProfilePageLoaded = profilePage.isUrlLoaded(PROFILE_PAGE);
         Assert.assertTrue(isProfilePageLoaded);
 
         log.info("STEP 7.: Verify there is a post - to be deleted.");
@@ -106,7 +106,7 @@ public class PostTests extends BaseTest {
     }
 
     @Test (priority = 1)
-    public void verifyUserCanLikeOtherMembersPosts() throws InterruptedException {
+    public void verifyUserCanLikeOtherMembersPost() throws InterruptedException {
 
         HomePage homePage = new HomePage(super.driver, log);
         log.info("STEP 1: Not logged in user has opened the Skillo HomePage.");
@@ -138,13 +138,16 @@ public class PostTests extends BaseTest {
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
         loginPage.loginWithUserAndPassword(testUser, testPassword);
 
-        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+        log.info ("STEP 4.1.: Verify the navigation bar Home link is presented.");
         homePage.isNavBarHomeShown();
 
         log.info ("STEP 4.2.: The User click on navigation bar Home link.");
         homePage.clickOnNavBarHome();
 
         log.info("STEP 5.: The User is navigated to the Public Page");
+
+
+
         ProfilePage profilePage = new ProfilePage(super.driver,log);
 
         log.info("STEP 6.: The User select Profile of other User - Lora");
@@ -167,7 +170,7 @@ public class PostTests extends BaseTest {
     }
 
     @Test (priority = 2)
-    public void verifyUserCanDislikePost() {
+    public void verifyUserCanDislikeOtherMembersPost() {
         HomePage homePage = new HomePage(super.driver, log);
         log.info("STEP 1: Not logged in user has opened the Skillo HomePage.");
         homePage.openHomePage();
@@ -198,20 +201,17 @@ public class PostTests extends BaseTest {
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
         loginPage.loginWithUserAndPassword(testUser, testPassword);
 
+        log.info("STEP 4.: Verify the User is navigated to the Home Page");
+
         log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeShown();
 
-        log.info ("STEP 4.2.: The User click on navigation bar Home link.");
-        homePage.clickOnNavBarHome();
-
-        log.info("STEP 5.: Verify the User is navigated to the Profile Page");
-
-        log.info("STEP 5.1.: Verify if the URL is for the Profile Page");
+        log.info("STEP 4.2.: Verify if the URL is for the Home Page");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
-        boolean isProfilePageLoaded = profilePage.isURLLoaded(PROFILE_PAGE);
-        Assert.assertTrue(isProfilePageLoaded);
+        boolean isHomePageLoaded = HomePage.isUrlLoaded(HOME_PAGE_URL);
+        Assert.assertTrue(isHomePageLoaded);
 
-        log.info("STEP 6.: The User select Profile of other User - Lora");
+        log.info("STEP 5.: The User select Profile of other User - Lora");
         profilePage.clickOnUserWithUploadedPic();
 
         log.info("STEP 7.: The User is in the Other User Profile - Lora");
@@ -225,7 +225,7 @@ public class PostTests extends BaseTest {
         log.info("STEP 10.: Verify if the Dislike Message is visible.");
         profilePage.isDislikeMessageVisible();
 
-        log.info("STEP 11. Close the post Modal.");
+        log.info("STEP 11.: Close the post Modal.");
         profilePage.closePostModal();
 
     }
@@ -249,7 +249,7 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 5: Verifying the user is navigated to the Profile Page.");
         ProfilePage profilePage = new ProfilePage(super.driver, log);
-        Assert.assertTrue(profilePage.isURLLoaded(PROFILE_PAGE), "Failed to navigate to Profile Page.");
+        Assert.assertTrue(profilePage.isUrlLoaded(PROFILE_PAGE), "Failed to navigate to Profile Page.");
 
         log.info("STEP 6: Checking for existing posts to delete.");
         int initialPostCount = profilePage.countAllPostsWithScroll();

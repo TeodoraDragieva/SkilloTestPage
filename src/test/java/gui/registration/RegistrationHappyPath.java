@@ -30,7 +30,7 @@ public class RegistrationHappyPath extends BaseTest {
 
         log.info("STEP 1.1.: Verify the user is on the Registration Page");
         HomePage homePage = new HomePage(super.driver,log);
-        boolean isHomePageLoaded = homePage.isURLLoaded(REGISTRATION_PAGE_URL);
+        boolean isHomePageLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
 
         log.info("STEP 1.1.1.: Verify the Registration Form Title is presented");
@@ -74,7 +74,7 @@ public class RegistrationHappyPath extends BaseTest {
         Assert.assertTrue(isNavBarProfileShown);
 
         log.info("STEP 6.4.: Verify the current URL is for Home Page.");
-        boolean isHomePageLoadedAgain = homePage.isURLLoaded(HOME_PAGE_URL);
+        boolean isHomePageLoadedAgain = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoadedAgain);
 
     }
