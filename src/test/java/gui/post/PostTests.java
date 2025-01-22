@@ -104,7 +104,7 @@ public class PostTests extends BaseTest {
         String postCaption = postPage.getImageName();
         Assert.assertEquals(postCaption, caption, "The caption is not presented correctly.");
 
-        log.info ("STEP 12.4.: Verify the text of the new post is visible.");
+        log.info ("STEP 12.4.: Verify the Username is visible in the new post.");
         String postUserTxt = postModal.getPostUser();
         Assert.assertEquals(postUserTxt, testUser);
     }
