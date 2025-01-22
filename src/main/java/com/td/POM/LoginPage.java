@@ -20,10 +20,6 @@ public class LoginPage extends BasePage {
     private WebElement loginFormUserNameInputField;
     @FindBy(id = "defaultLoginFormPassword")
     private WebElement loginFormPasswordInputField;
-    @FindBy (xpath = "//span[contains(text(),'Remember me')]")
-    private WebElement loginFormRememberMeInputField;
-    @FindBy (xpath = "//input[contains(@formcontrolname,'rememberMe')]")
-    private WebElement loginFormRememberMeCheckBoxLabelText;
     @FindBy(id = "sign-in-button")
     private WebElement loginFormSubmitButton;
     @FindBy (xpath = "//a[contains(.,'Register')]")

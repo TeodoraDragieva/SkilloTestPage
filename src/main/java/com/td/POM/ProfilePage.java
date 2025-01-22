@@ -15,14 +15,8 @@ public class ProfilePage extends BasePage {
 
     public static final String PROFILE_PAGE = "/users/5646";
 
-    @FindBy(xpath = "//div[contains(@class,'edit-profile-pic')]")
-    private WebElement uploadImage;
-    @FindBy(id = "upload-img")
-    private WebElement hiddenUploadImage;
     @FindBy(xpath = "//i[contains(@class,'like far fa-heart fa-2x')]")
     private WebElement likeButton;
-    @FindBy(xpath = "//i[contains(@class,'ml-4 far fa-thumbs-down fa-2x')]")
-    private WebElement dislikeButton;
     @FindBy(xpath = "//label[contains(@class,'delete-ask')]")
     private WebElement deletePostButton;
     @FindBy(xpath = "//button[contains(@class,'btn btn-primary btn-sm')]")
@@ -39,8 +33,6 @@ public class ProfilePage extends BasePage {
     private WebElement userProfileLink;
     @FindBy(css = "app-post.app-post")
     private List<WebElement> posts;
-    @FindBy(css = "label.btn-private.active > input[type='radio']")
-    private WebElement privateButtonInProfilePage;
 
     public ProfilePage(WebDriver driver, Logger log) {
         super(driver, log);

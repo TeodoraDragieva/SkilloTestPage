@@ -13,7 +13,7 @@ public class LoginNegativePathsTest extends BaseTest {
 
     @Test
     public void verifyUserCannotLoginWithWrongUserName() throws InterruptedException {
-        LoginPage loginPage = new LoginPage(super.driver,log);
+        LoginPage loginPage = new LoginPage(super.driver, log);
 
         log.info("STEP 1: Already registered user is landing on Iskilo Login Page");
         loginPage.navigateToLoginPage();
@@ -24,7 +24,7 @@ public class LoginNegativePathsTest extends BaseTest {
 
         log.info("STEP 1.1.2. Verify that the Login Form is presented");
         String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
-        Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
+        Assert.assertEquals(actualLoginFormTitle, LOGIN_FORM_TITLE);
 
         log.info("STEP 3. Provide username");
         loginPage.provideUserName("WRONG");
@@ -37,11 +37,11 @@ public class LoginNegativePathsTest extends BaseTest {
 
         log.info("STEP 6.1. Verify the Login is successful");
         String actualLoginActionMSG = loginPage.getLoginActionMessage();
-        Assert.assertEquals(actualLoginActionMSG,LOGIN_NOT_SUCCESSFUL_MSG);
+        Assert.assertEquals(actualLoginActionMSG, LOGIN_NOT_SUCCESSFUL_MSG);
 
         log.info("STEP 6.1.2. Verify that the Login Form is presented");
         String actualLoginFormTitle2 = loginPage.getLoginPageFormTitle();
-        Assert.assertEquals(actualLoginFormTitle2,LOGIN_FORM_TITLE);
+        Assert.assertEquals(actualLoginFormTitle2, LOGIN_FORM_TITLE);
 
         log.info("STEP 6.1.3. Verify that the Login Button From Login Form is presented");
         boolean isLoginButtonStayVisbile = loginPage.loginButtonIsShown();
@@ -51,51 +51,4 @@ public class LoginNegativePathsTest extends BaseTest {
         boolean isLoginPageStillLoaded = loginPage.isUrlLoaded(LOGIN_PAGE);
         Assert.assertTrue(isLoginPageStillLoaded, "The Login Page is not loaded!");
     }
-//
-//    @Test
-//    public void verifyUserCannotLoginWithEmptyUserName(){
-//        LoginPage loginPage = new LoginPage(super.driver,log);
-//
-//        log.info("STEP 1: Already registered user is landing Iskilo loinpage");
-//        loginPage.navigateToLoginPage();
-//        //Verification that the user is on login page
-//        //Verification login form is presented
-//
-//        loginPage.provideUserName(" ");
-//
-//        loginPage.providePassword("testing");
-//
-//
-//        loginPage.clickOnLoginButton();
-//        //Assertion
-//        //  Login action message shows = ERROR text
-//        //If user cannot login - login button states the some =  Form visible
-//        // Login button from login Form visible
-//        // page ULR = some
-//    }
-
-//    @Test
-//    public void verifyUserCannotLoginWithWrongPassword(){
-//        LoginPage loginPage = new LoginPage(super.driver,log);
-//        loginPage.navigateToLoginPage();
-//        loginPage.provideUserName("testingDemo");
-//        loginPage.providePassword("WrongPassword");
-//
-//    }
-
-//    @Test
-//    public void verifyUserCannotLoginWithEmptyPassword(){
-//        LoginPage loginPage = new LoginPage(super.driver,log);
-//        loginPage.navigateToLoginPage();
-//        loginPage.provideUserName("testingDemo");
-//        loginPage.providePassword(" ");
-//
-//    }
-
-//    @Test
-//    public void verifyUserCannotLoginWithEmptyCredentialsData(){
-//        LoginPage loginPage = new LoginPage(super.driver,log);
-//        loginPage.navigateToLoginPage();
-
-    }
-
+}

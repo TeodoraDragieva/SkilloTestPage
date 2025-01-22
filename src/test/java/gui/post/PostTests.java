@@ -165,7 +165,6 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 11. :Close the post Modal.");
         profilePage.closePostModal();
-
     }
 
     @Test (priority = 2)
@@ -226,7 +225,6 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 10.: Close the post Modal.");
         profilePage.closePostModal();
-
     }
 
     @Test(priority = 3)
@@ -266,30 +264,5 @@ public class PostTests extends BaseTest {
         int postCountAfterDelete = profilePage.countAllPostsWithScrollUp();
         Assert.assertEquals(postCountAfterDelete, initialPostCount - 1, "Post count did not decrease by 1.");
     }
-
 }
 
-
-//    @Test(priority = 1) ????
-//    public void verifyUserCanLikePost() throws InterruptedException {
-//        HomePage homePage = new HomePage(super.driver, log);
-//        LoginPage loginPage = new LoginPage(super.driver, log);
-//
-//        log.info("The user has navigated to the Login page.");
-//        loginPage.navigateToLoginPage();
-//
-//        log.info("The user has logged in with username and password.");
-//        loginPage.loginWithUSerAndPassword(testUser, testPassword);
-//
-//        log.info("The user has navigated to the Profile page.");
-//        homePage.clickOnNavBarProfile();
-//
-//        ProfilePage profilePage = new ProfilePage(super.driver, log);
-//        profilePage.clickPost(0);
-//        log.info("The user has clicked on the first post.");
-//
-//        profilePage.ClickOnLikeButton();
-//        log.info("The user has clicked on the like button.");
-//        profilePage.isLikeMessageVisible();
-//
-//    }

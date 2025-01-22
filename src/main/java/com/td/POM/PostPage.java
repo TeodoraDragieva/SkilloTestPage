@@ -12,7 +12,7 @@ import java.io.File;
 
 public class PostPage extends BasePage {
 
-    final String POST_PAGE_URL = "http://training.skillo-bg.com:4300/posts/create";
+    public static final String POST_PAGE_URL = "/posts/create";
 
     @FindBy(css = "img.image-preview")
     private WebElement image;

@@ -72,6 +72,4 @@ public class LoginHappyPathsTest extends BaseTest {
         boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded, "The Home Page is not loaded!");
     }
-
-   //2. Login with newly created/registered user - valid credentials
 }
