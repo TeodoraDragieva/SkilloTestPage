@@ -26,7 +26,7 @@ public class RegistrationNegativePathTests extends BaseTest {
 
         log.info("STEP 1.1.: Verify the user is on the Registration Page.");
         HomePage homePage = new HomePage(super.driver,log);
-        boolean isRegistrationPageLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
+        boolean isRegistrationPageLoaded = registrationPage.isUrlLoaded(REGISTRATION_PAGE_URL);
         Assert.assertTrue(isRegistrationPageLoaded, "The Registration Page is Not loaded!");
 
         log.info("STEP 1.1.1.: Verify the Registration Form Title is presented.");
@@ -61,16 +61,16 @@ public class RegistrationNegativePathTests extends BaseTest {
         Assert.assertEquals(actualRegistrationMessage, REGISTRATION_UNSUCCESSFUL_MSG_USERNAME_TAKEN);
 
         log.info("STEP 8.2.: Verify the user is still on the Registration Page.");
-        boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
-        Assert.assertFalse(isHomePageLoaded, "The User landed on the Home Page!");
-//
-//        log.info("STEP 8.3.: Verify the Registration Form Title is still presented.");
-//        String checkAgainActualRegFormTitle = registrationPage.getRegPageFormTitle();
-//        Assert.assertEquals(checkAgainActualRegFormTitle, REGISTRATION_FORM_TITLE);
-//
-//        log.info ("STEP 8.4.: Verify the Sing in Button is stil visible");
-//        boolean isLoginButtonStayVisile = registrationPage.isSignInButtonShown();
-//        Assert.assertTrue(isLoginButtonStayVisile);
+        boolean isRegistrationPageStillLoaded = registrationPage.isUrlLoaded(REGISTRATION_PAGE_URL);
+        Assert.assertTrue(isRegistrationPageStillLoaded, "The User is not on Registration Page!");
+
+        log.info("STEP 8.3.: Verify the Registration Form Title is still presented.");
+        String checkAgainActualRegFormTitle = registrationPage.getRegPageFormTitle();
+        Assert.assertEquals(checkAgainActualRegFormTitle, REGISTRATION_FORM_TITLE);
+
+        log.info ("STEP 8.4.: Verify the Sing in Button is still visible");
+        boolean isLoginButtonStillVisile = registrationPage.isSignInButtonShown();
+        Assert.assertTrue(isLoginButtonStillVisile);
 
     }
 
