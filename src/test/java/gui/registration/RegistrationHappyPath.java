@@ -14,7 +14,6 @@ import static com.td.POM.RegistrationPage.REGISTRATION_PAGE_URL;
 
 public class RegistrationHappyPath extends BaseTest {
 
-    public static final String REGISTRATION_SUCCESSFUL_MSG = "Successful register!";
     private static final String HOME_PAGE_URL = "/posts/all";
 
     @Test
@@ -64,7 +63,7 @@ public class RegistrationHappyPath extends BaseTest {
 
         log.info("STEP 9.1.: Verify the Message for Successful Registration");
         String actualRegistrationMessage = registrationPage.getRegistrationActionMessage();
-        Assert.assertEquals(actualRegistrationMessage, REGISTRATION_SUCCESSFUL_MSG);
+        Assert.assertEquals(actualRegistrationMessage, "Successful register!");
 
         LoginPage loginPage = new LoginPage(super.driver, log);
 

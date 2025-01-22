@@ -9,7 +9,6 @@ import static com.td.POM.LoginPage.LOGIN_FORM_TITLE;
 import static com.td.POM.LoginPage.LOGIN_PAGE;
 
 public class LoginNegativePathsTest extends BaseTest {
-    public static final String LOGIN_NOT_SUCCESSFUL_MSG = "Wrong username or password!";
 
     @Test
     public void verifyUserCannotLoginWithWrongUserName() throws InterruptedException {
@@ -37,7 +36,7 @@ public class LoginNegativePathsTest extends BaseTest {
 
         log.info("STEP 6.1. Verify the Login is successful");
         String actualLoginActionMSG = loginPage.getLoginActionMessage();
-        Assert.assertEquals(actualLoginActionMSG, LOGIN_NOT_SUCCESSFUL_MSG);
+        Assert.assertEquals(actualLoginActionMSG, "Wrong username or password!");
 
         log.info("STEP 6.1.2. Verify that the Login Form is presented");
         String actualLoginFormTitle2 = loginPage.getLoginPageFormTitle();

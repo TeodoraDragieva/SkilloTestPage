@@ -12,12 +12,10 @@ import static com.td.POM.LoginPage.LOGIN_FORM_TITLE;
 import static com.td.POM.ProfilePage.PROFILE_PAGE;
 
 public class PostTests extends BaseTest {
-    public static final String testUser = "testingDemos";
-    public static final String testPassword = "testing";
-    public static final String caption = "Testing the create post caption";
+
     private static final String HOME_PAGE_URL = "/posts/all";
     File postPicture = new File("src/test/resources/upload/pirin.jpg");
-    private static final String UPLOAD_FORM_TITLE = "Post a picture to share with your awesome followers";
+
 
     @Test(priority = 0)
     public void verifyUserCanCreatePost() throws InterruptedException {
@@ -50,7 +48,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUserAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword("testingDemos", "testing");
 
         log.info ("STEP 4.: Verify the navigation bar Home link is presented.");
         homePage.isNavBarHomeLinkShown();
@@ -77,13 +75,13 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 9.1.: Verify that the Upload Form is presented");
         String actualUploadFormTitle = postPage.getUploadPageFormTitle();
-        Assert.assertEquals(actualUploadFormTitle,UPLOAD_FORM_TITLE);
+        Assert.assertEquals(actualUploadFormTitle,"Post a picture to share with your awesome followers");
 
         log.info ("STEP 10.: The User is Uploading New Picture.");
         postPage.uploadPicture(postPicture);
 
         log.info ("STEP 11.: The User is providing Post Caption.");
-        postPage.providePostCaption(caption);
+        postPage.providePostCaption("testing");
         postPage.clickCreatePostButton();
 
         log.info ("STEP 12.: Verify the Post is created.");
@@ -102,11 +100,11 @@ public class PostTests extends BaseTest {
 
         log.info("STEP 12.4.: Verify the Image name (caption) is visible in the Post Modal.");
         String postCaption = postPage.getImageName();
-        Assert.assertEquals(postCaption, caption, "The caption is not presented correctly.");
+        Assert.assertEquals(postCaption, "Testing the create post caption", "The caption is not presented correctly.");
 
-        log.info ("STEP 12.4.: Verify the Username is visible in the new post.");
+        log.info ("STEP 12.5.: Verify the Username is visible in the new post.");
         String postUserTxt = postModal.getPostUser();
-        Assert.assertEquals(postUserTxt, testUser);
+        Assert.assertEquals(postUserTxt, "testingDemos");
     }
 
     @Test (priority = 1)
@@ -140,7 +138,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUserAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword("testingDemos", "testing");
 
         log.info("STEP 5.: Verify the User is navigated to the Home Page");
 
@@ -201,7 +199,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUserAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword("testingDemos", "testing");
 
         log.info("STEP 4.: Verify the User is navigated to the Home Page");
 
@@ -243,7 +241,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(loginPage.getLoginPageFormTitle(), LOGIN_FORM_TITLE, "Incorrect login page title.");
 
         log.info("STEP 3: Logging in with valid credentials.");
-        loginPage.loginWithUserAndPassword(testUser, testPassword);
+        loginPage.loginWithUserAndPassword("testingDemos", "testing");
 
         log.info("STEP 4: Clicking on Profile link in navigation bar.");
         homePage.clickOnNavBarProfile();

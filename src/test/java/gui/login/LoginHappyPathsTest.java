@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 
 public class LoginHappyPathsTest extends BaseTest {
 
-    private static final String LOGIN_FORM_TITLE = "Sign in";
-    public static final String LOGIN_SUCCESSFUL_MSG = "Successful login!";
     private static final String HOME_PAGE_URL = "/posts/all";
 
     @Test
@@ -39,7 +37,7 @@ public class LoginHappyPathsTest extends BaseTest {
         log.info("STEP 2.1.: Verify the User successfully landed on the Login Page");
         LoginPage loginPage = new LoginPage(super.driver,log);
         String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
-        Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
+        Assert.assertEquals(actualLoginFormTitle,"Sign in");
 
         log.info("STEP 2.2. Verify that the Login Button From Login Form is presented");
         boolean isLoginButtonVisbile = loginPage.loginButtonIsShown();
@@ -58,7 +56,7 @@ public class LoginHappyPathsTest extends BaseTest {
 
         log.info("STEP 6.1.: Verify the Message for Successful Login");
         String actualLoginActionMSG = loginPage.getLoginActionMessage();
-        Assert.assertEquals(actualLoginActionMSG,LOGIN_SUCCESSFUL_MSG);
+        Assert.assertEquals(actualLoginActionMSG,"Successful login!");
 
         log.info("STEP 6.2.: Verify the Log out Button is presented");
         boolean isShownLogoutButton = loginPage.isLogoutButtonShown();

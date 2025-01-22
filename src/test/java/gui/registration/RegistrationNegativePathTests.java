@@ -13,9 +13,6 @@ import static com.td.POM.RegistrationPage.REGISTRATION_PAGE_URL;
 
 public class RegistrationNegativePathTests extends BaseTest {
 
-    public static final String REGISTRATION_UNSUCCESSFUL_MSG_USERNAME_TAKEN = "Username taken";
-    public static final String REGISTRATION_UNSUCCESSFUL_MSG_EMAIL_TAKEN = "Email taken";
-
     @Test (priority = 0)
     public void verifyTheUserCannotRegisterWithTakenUsername() throws InterruptedException {
 
@@ -58,7 +55,7 @@ public class RegistrationNegativePathTests extends BaseTest {
 
         log.info("STEP 8.1.: Verify the Message Username taken is presented.");
         String actualRegistrationMessage = registrationPage.getRegistrationActionMessage();
-        Assert.assertEquals(actualRegistrationMessage, REGISTRATION_UNSUCCESSFUL_MSG_USERNAME_TAKEN);
+        Assert.assertEquals(actualRegistrationMessage, "Username taken");
 
         log.info("STEP 8.2.: Verify the user is still on the Registration Page.");
         boolean isRegistrationPageStillLoaded = registrationPage.isUrlLoaded(REGISTRATION_PAGE_URL);
@@ -116,7 +113,7 @@ public class RegistrationNegativePathTests extends BaseTest {
 
         log.info("STEP 8.1.: Verify the Message for Already Taken User is presented");
         String actualRegistrationMessage = registrationPage.getRegistrationActionMessage();
-        Assert.assertEquals(actualRegistrationMessage, REGISTRATION_UNSUCCESSFUL_MSG_EMAIL_TAKEN);
+        Assert.assertEquals(actualRegistrationMessage, "Email taken");
 
         log.info("STEP 8.2.: Verify the user is still on the Registration Page.");
         boolean isHomePageStillLoaded = homePage.isUrlLoaded(REGISTRATION_PAGE_URL);
