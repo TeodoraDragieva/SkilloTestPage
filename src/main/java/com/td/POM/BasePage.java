@@ -46,7 +46,6 @@ public class BasePage {
         }
     }
 
-
     public void navigateTo(String pageURLSuffix) {
         String currentURL = BASE_URL + pageURLSuffix;
 

@@ -96,9 +96,13 @@ public class PostTests extends BaseTest {
         int lastPostIndex = profilePage.getLastPostIndex();
         profilePage.clickPost(lastPostIndex);
 
-        log.info ("STEP 12.3.: Verify the Image is visibale in the Post Modal.");
+        log.info ("STEP 12.3.: Verify the Image is visible in the Post Modal.");
         PostModal postModal = new PostModal(super.driver, log);
         Assert.assertTrue(postModal.isImageVisible(), "The image is not visible!");
+
+        log.info("STEP 12.4.: Verify the Image name (caption) is visible in the Post Modal.");
+        String postCaption = postPage.getImageName();
+        Assert.assertEquals(postCaption, caption, "The caption is not presented correctly.");
 
         log.info ("STEP 12.4.: Verify the text of the new post is visible.");
         String postUserTxt = postModal.getPostUser();

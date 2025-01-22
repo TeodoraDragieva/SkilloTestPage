@@ -6,10 +6,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PostModal extends BasePage{
     private final WebElement modalElement;
+
     public PostModal (WebDriver driver, Logger log) {
         super(driver,log);
         this.modalElement = driver.findElement(By.className("post-modal"));
     }
+
     public boolean isImageVisible() {
         try {
             WebElement image = modalElement.findElement(By.cssSelector(".post-modal-img"));

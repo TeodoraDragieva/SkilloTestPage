@@ -22,6 +22,8 @@ public class PostPage extends BasePage {
     private WebElement uploadField;
     @FindBy(name = "caption")
     private WebElement captionElement;
+    @FindBy (css = "div.post-title")
+    private WebElement postTitle;
     @FindBy(id = "create-post")
     private WebElement createPostButton;
     @FindBy (css = "h3.text-center")
@@ -33,21 +35,9 @@ public class PostPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public boolean isImageVisible() {
-        boolean isVisible = false;
-        try {
-            isVisible = wait.until(ExpectedConditions.visibilityOf(image)).isDisplayed();
-            log.info("CONFIRMATION # The file is visible.");
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            log.error("ERROR : The file is not visible");
-            isVisible = false;
-        }
-        return isVisible;
-    }
-
     public String getImageName() {
-        String imageName = imageTextElement.getAttribute("placeholder");
+        wait.until(ExpectedConditions.visibilityOf(postTitle));
+        String imageName = postTitle.getText();
         log.info("CONFIRMATION # The image name is: " + imageName);
         return imageName;
     }
