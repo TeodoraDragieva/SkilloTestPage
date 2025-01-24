@@ -81,7 +81,6 @@ Tip number 3:
     - New project from VCS - > provide git repo link
     - click on 
 
-
 CHECK FOLDER PATHS:
 
 These are steps that need to be done for Windows OS users:
@@ -108,7 +107,10 @@ STEP 3:
 Wait a bit the automation to start and after the test execution a report will be generated.
 
 ## Bug report
-If you find any bugs that you want to report, please do so with the bug report and live Cycle explained.
+1. On the Registration Page the button at the end of the Registration Form should be named "Sing up", not "Sing in".
+2. On the Registation Form, when we fill the username filed we receive message "Minimum 2 characters!", but we can create Username with not less than 4 characters.
+3. On the Registation Form, when we start to type new email we do not receive message what are the requirments.
+4. The User can register with unvalid date - example with "01/01/999999""
 
 ## Contact
 
