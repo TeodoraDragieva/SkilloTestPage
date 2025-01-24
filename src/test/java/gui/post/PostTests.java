@@ -16,7 +16,6 @@ public class PostTests extends BaseTest {
     private static final String HOME_PAGE_URL = "/posts/all";
     File postPicture = new File("src/test/resources/upload/pirin.jpg");
 
-
     @Test(priority = 0)
     public void verifyUserCanCreatePost() throws InterruptedException {
 
@@ -48,7 +47,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
-        loginPage.loginWithUserAndPassword("testingDemos", "testing");
+        loginPage.loginWithUserAndPassword("tedi90@abv.bg", "Pukanka2");
 
         log.info ("STEP 4.: Verify the navigation bar Home link is presented.");
         homePage.isNavBarHomeLinkShown();
@@ -86,25 +85,26 @@ public class PostTests extends BaseTest {
 
         log.info ("STEP 12.: Verify the Post is created.");
 
-        log.info ("STEP 12.1.: Verify there is one more post shown.");
-        int postFinalCount = profilePage.countAllPostsWithScroll ();
-        Assert.assertTrue(postFinalCount == initialPostCount + 1, "Posts didn't increase by 1.");
-
-        log.info ("STEP 12.2.: Click on Post.");
+        log.info ("STEP 12.1.: Click on Post.");
         int lastPostIndex = profilePage.getLastPostIndex();
         profilePage.clickPost(lastPostIndex);
 
-        log.info ("STEP 12.3.: Verify the Image is visible in the Post Modal.");
+        log.info ("STEP 12.2.: Verify the Image is visible in the Post Modal.");
         PostModal postModal = new PostModal(super.driver, log);
         Assert.assertTrue(postModal.isImageVisible(), "The image is not visible!");
 
-        log.info("STEP 12.4.: Verify the Image name (caption) is visible in the Post Modal.");
+        log.info("STEP 12.3.: Verify the Image name (caption) is visible in the Post Modal.");
         String postCaption = postPage.getImageName();
-        Assert.assertEquals(postCaption, "Testing the create post caption", "The caption is not presented correctly.");
+        Assert.assertEquals(postCaption, "testing", "The caption is not presented correctly.");
 
-        log.info ("STEP 12.5.: Verify the Username is visible in the new post.");
+        log.info ("STEP 12.4.: Verify the Username is visible in the new post.");
         String postUserTxt = postModal.getPostUser();
-        Assert.assertEquals(postUserTxt, "testingDemos");
+        Assert.assertEquals(postUserTxt, "tedi90@abv.bg");
+
+        log.info ("STEP 12.5.: Verify there is one more post shown.");
+        int postFinalCount = profilePage.countAllPostsWithScroll ();
+        Assert.assertTrue(postFinalCount == initialPostCount + 1, "Posts didn't increase by 1.");
+
     }
 
     @Test (priority = 1)
@@ -149,23 +149,23 @@ public class PostTests extends BaseTest {
         boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
 
+        log.info("STEP 6.: The User search and select the User Profile - tedi90@abv.bg");
+
+        homePage.searchAndSelectMember("tedi90@abv.bg");
+        homePage.clickOnUserProfileFoundAfterSearching();
+
         ProfilePage profilePage = new ProfilePage(super.driver,log);
 
-        log.info("STEP 6.: The User select Profile of other User - Lora");
-        profilePage.clickOnUserWithUploadedPic();
-
-        log.info("STEP 7.: The User is in the Other User Profile - Lora");
-
-        log.info("STEP 8.: The user has clicked on the first post of the Other User.");
+        log.info("STEP 7.: The user click on the first post of the Other User.");
         profilePage.clickPost(0);
 
-        log.info("STEP 9. :The user has clicked on the like button.");
+        log.info("STEP 8. :The user has clicked on the like button.");
         profilePage.clickOnLikeButton();
 
-        log.info("STEP 10. :Verify if the Like Message is visible.");
+        log.info("STEP 9. :Verify if the Like Message is visible.");
         profilePage.isLikeMessageVisible();
 
-        log.info("STEP 11. :Close the post Modal.");
+        log.info("STEP 10. :Close the post Modal.");
         profilePage.closePostModal();
     }
 
@@ -194,38 +194,39 @@ public class PostTests extends BaseTest {
 
         LoginPage loginPage = new LoginPage(super.driver, log);
 
-        log.info("STEP 2.1.: Verify the User is successfully landed on the Login Page.");
+        log.info("STEP 2.1.: Verify the User successfully landed on the Login Page.");
         String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
         Assert.assertEquals(actualLoginFormTitle,LOGIN_FORM_TITLE);
 
         log.info("STEP 3.: Provide username and password and clicking on Login Button.");
         loginPage.loginWithUserAndPassword("testingDemos", "testing");
 
-        log.info("STEP 4.: Verify the User is navigated to the Home Page");
+        log.info("STEP 5.: Verify the User is navigated to the Home Page");
 
-        log.info ("STEP 4.1.: Verify the navigation bare Home link is presented.");
+        log.info ("STEP 5.1.: Verify the navigation bare Home link is presented.");
         homePage.isNavBarHomeLinkShown();
 
-        log.info("STEP 4.2.: Verify if the URL is for the Home Page");
-        ProfilePage profilePage = new ProfilePage(super.driver,log);
-        boolean isHomePageLoaded = homePage.isUrlLoaded (HOME_PAGE_URL);
+        log.info("STEP 5.2.: Verify if the URL is for the Home Page");
+        boolean isHomePageLoaded = homePage.isUrlLoaded(HOME_PAGE_URL);
         Assert.assertTrue(isHomePageLoaded);
 
-        log.info("STEP 5.: The User selects Profile of other User - Lora");
-        profilePage.clickOnUserWithUploadedPic();
+        log.info("STEP 6.: The User search and select the User Profile - tedi90@abv.bg");
 
-        log.info("STEP 6.: The User is in the Other User Profile - Lora");
+        homePage.searchAndSelectMember("tedi90@abv.bg");
+        homePage.clickOnUserProfileFoundAfterSearching();
+
+        ProfilePage profilePage = new ProfilePage(super.driver,log);
 
         log.info("STEP 7.: The user has clicked on the first post of the Other User.");
         profilePage.clickPost(0);
 
-        log.info("STEP 8.: The user click on the Like button in order to dislike post.");
+        log.info("STEP 8. :The user has clicked on the like button.");
         profilePage.clickOnLikeButton();
 
-        log.info("STEP 9.: Verify if the Dislike Message is visible.");
+        log.info("STEP 9. :Verify if the Like Message is visible.");
         profilePage.isDislikeMessageVisible();
 
-        log.info("STEP 10.: Close the post Modal.");
+        log.info("STEP 10. :Close the post Modal.");
         profilePage.closePostModal();
     }
 
@@ -241,7 +242,7 @@ public class PostTests extends BaseTest {
         Assert.assertEquals(loginPage.getLoginPageFormTitle(), LOGIN_FORM_TITLE, "Incorrect login page title.");
 
         log.info("STEP 3: Logging in with valid credentials.");
-        loginPage.loginWithUserAndPassword("testingDemos", "testing");
+        loginPage.loginWithUserAndPassword("tedi90@abv.bg", "Pukanka2");
 
         log.info("STEP 4: Clicking on Profile link in navigation bar.");
         homePage.clickOnNavBarProfile();

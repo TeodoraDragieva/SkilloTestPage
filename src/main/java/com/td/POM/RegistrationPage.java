@@ -28,7 +28,7 @@ public class RegistrationPage  extends BasePage {
     private WebElement publicInfoPlaceHolder;
     @FindBy (id = "sign-in-button")
     private WebElement signInButton;
-    @FindBy (css = "div.toast-message.ng-star-inserted")
+    @FindBy (css = "//div[contains(text(), 'Successful register')]")
     private WebElement registrationFormToastMsg;
 
     public RegistrationPage (WebDriver driver, Logger log) {

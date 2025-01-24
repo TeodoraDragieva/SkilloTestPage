@@ -2,10 +2,13 @@ package com.td.POM;
 
 import org.apache.logging.log4j.Logger;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
     public static final String HOME_PAGE_URL = "/posts/all";
@@ -18,6 +21,10 @@ public class HomePage extends BasePage {
     private WebElement navBarProfile;
     @FindBy(id = "nav-link-login")
     private WebElement navBarLogin;
+    @FindBy (css = "input#search-bar.form-control[formcontrolname=\"query\"]")
+    private WebElement searchBar;
+    @FindBy (css = "a.post-user[href=\"/users/9099\"]")
+    private WebElement userNameFoundAfterSearch;
 
     public HomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -52,5 +59,21 @@ public class HomePage extends BasePage {
        waitAndClickOnWebElement(navBarNewPost);
     }
 
+    public void useTheSearchBar(String userName) {
+        isPresented(searchBar);
+        waitAndTypeTextInField(searchBar, userName); }
+
+    public void searchAndSelectMember(String memberName) {
+        waitPageTobeFullyLoaded();
+        searchBar.sendKeys(memberName); // Търсене по име
+        searchBar.sendKeys(Keys.ENTER); // Потвърждение на търсенето
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.post-user[href=\"/users/9099\"]")));
+        log.info("Search result is displayed for: " + memberName);
+    }
+
+    public void clickOnUserProfileFoundAfterSearching () {
+        isPresented(userNameFoundAfterSearch);
+        waitAndClickOnWebElement(userNameFoundAfterSearch);}
 }
 

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ProfilePage extends BasePage {
 
-    public static final String PROFILE_PAGE = "/users/5646";
+    public static final String PROFILE_PAGE = "/users/9099";
 
     @FindBy(xpath = "//i[contains(@class,'like far fa-heart fa-2x')]")
     private WebElement likeButton;

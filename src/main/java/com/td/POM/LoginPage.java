@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
     private WebElement loginFormSubmitButton;
     @FindBy (xpath = "//a[contains(.,'Register')]")
     private WebElement loginFormRegisterPageLink;
-    @FindBy (css = ".toast-message.ng-star-inserted")
+    @FindBy (css = "//div[contains(text(), 'Successful login')]")
     private WebElement loginFormToastMessage;
     @FindBy (css = "i.fas.fa-sign-out-alt.fa-lg\n")
     private WebElement logoutButton;
