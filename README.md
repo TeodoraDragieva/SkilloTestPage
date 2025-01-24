@@ -34,7 +34,7 @@ List of the test cases.
 Registration feature:
 - Verify user cаn registered in the system with valid data.
 - Verify user can NOT register in the system with already taken username.
-- - Verify user can NOT register in the system with alerady taken password.
+- Verify user can NOT register in the system with alerady taken password.
 
 - Login feature
     - Verify already registered user can successfully login in the system
@@ -47,6 +47,8 @@ Registration feature:
     - Verify user can delete a post.
     - Verify user can like post.
     - Verify user can dislike post.
+  - End-To-End Test
+    - Verify User Can Register, Login and create a post.
 
   
 ## Installation
@@ -108,9 +110,9 @@ Wait a bit the automation to start and after the test execution a report will be
 
 ## Bug report
 1. On the Registration Page the button at the end of the Registration Form should be named "Sing up", not "Sing in".
-2. On the Registation Form, when we fill the username filed we receive message "Minimum 2 characters!", but we can create Username with not less than 4 characters.
-3. On the Registation Form, when we start to type new email we do not receive message what are the requirments.
-4. The User can register with unvalid date - example with "01/01/999999""
+2. On the Registation Form, when we fill the username field we receive the message "Minimum 2 characters!", but we can create Username with not less than 4 characters.
+3. On the Registation Form, when we start to type new email we do not receive message what are the requirements for the Field.
+4. The User can register with unvalid date of Birth - example with "01/01/999999".
 
 ## Contact
 

@@ -155,4 +155,9 @@ public class BasePage {
         return postCount;
     }
 
+    public String getUsername() {
+        WebElement username = driver.findElement(By.tagName("h2"));
+        return username.getText();
+    }
+
 }

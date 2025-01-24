@@ -7,6 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class RegistrationPage  extends BasePage {
 
     public static final String REGISTRATION_PAGE_URL = "/users/register";
@@ -28,7 +32,7 @@ public class RegistrationPage  extends BasePage {
     private WebElement publicInfoPlaceHolder;
     @FindBy (id = "sign-in-button")
     private WebElement signInButton;
-    @FindBy (css = "//div[contains(text(), 'Successful register')]")
+    @FindBy (css = "div[role='alertdialog']")
     private WebElement registrationFormToastMsg;
 
     public RegistrationPage (WebDriver driver, Logger log) {
@@ -77,9 +81,20 @@ public class RegistrationPage  extends BasePage {
 
     public String getRegistrationActionMessage(){
         wait.until(ExpectedConditions.visibilityOf(registrationFormToastMsg));
+        waitPageTobeFullyLoaded();
         return registrationFormToastMsg.getText();
     }
 
     public boolean isSignInButtonShown(){ return isPresented(signInButton);}
+
+    public String[] loadUserData() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("user_data.txt"))) {
+            String line = reader.readLine();
+            return line.split(",");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 }

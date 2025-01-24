@@ -83,6 +83,10 @@ public class LoginPage extends BasePage {
         }
     }
 
+   public void clickOnLogOutButton () {
+        waitAndClickOnWebElement(logoutButton);
+   }
+
     public boolean isPageTitleCorrect() {
         String actualTitle = driver.getTitle();
         String expectedTitle = "ISkillo";

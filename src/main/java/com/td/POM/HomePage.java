@@ -59,10 +59,6 @@ public class HomePage extends BasePage {
        waitAndClickOnWebElement(navBarNewPost);
     }
 
-    public void useTheSearchBar(String userName) {
-        isPresented(searchBar);
-        waitAndTypeTextInField(searchBar, userName); }
-
     public void searchAndSelectMember(String memberName) {
         waitPageTobeFullyLoaded();
         searchBar.sendKeys(memberName); // Търсене по име
