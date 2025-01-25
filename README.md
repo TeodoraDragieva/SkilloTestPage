@@ -111,13 +111,26 @@ This section outlines known issues identified during testing on the iSkillo plat
 
 1. ID:01
 Name: Incorrect Button Label
+
 Issue: On the Registration Page, the button at the end of the Registration Form is labeled as "Sign in" instead of "Sign up."
+
 Impact: This may confuse users who are completing the registration process.
+
 Severity: Minor
 Steps to Reproduce:
 Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
 Step 2.: Complete all required fields in the Registration Form.
 Step 3.: Observe the button label at the end of the form.
+
+Expected Result:
+The button
+
+Actual Result:
+The button is labeled "Sign in," which may confuse users.
+
+Environment:
+OS: Windows 11
+Browser: Chrome 131.0
 
 2. ID:02
 Name: Inconsistent Username Validation Message
@@ -129,26 +142,66 @@ Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/u
 Step 2.: Enter fewer than 4 characters in the username field.
 Step 3.: Observe the validation message displayed.
 
+Expected Result:
+The validation message should state "Minimum 4 characters!" to match the actual requirement.
+
+Actual Result:
+The validation message incorrectly states "Minimum 2 characters!"
+
+Environment:
+OS: Windows 11
+Browser: Chrome 131.0
+
 3. ID:03
 Name: Missing Email Field Validation Message
+
 Issue: When users begin typing in the email field of the Registration Form, no validation message is displayed to indicate the email format requirements.
+
 Impact: Users are unaware of the expected format, increasing the likelihood of errors.
+
 Severity: Minor
+
 Steps to Reproduce:
 Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
 Step 2.: Start typing an email address in the email field.
 Step 3.: Observe the absence of a validation message.
 
+Expected Result:
+A message should be displayed, indicating the email requirements (e.g., "Must include '@' and a domain name.").
+
+Actual Result:
+No message is shown to guide the user.
+
+Environment:
+OS: Windows 11
+Browser: Chrome 131.0
+
+
 4. ID:04 
 Name: Invalid Date of Birth Acceptance
+
 Issue: The system allows users to register with an invalid date of birth, such as "01/01/999999."
+
 Impact: Leads to unrealistic or malformed user data in the system.
+
 Severity: Major
+
 Steps to Reproduce:
 Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
 Step 2.:Enter an invalid date of birth (e.g., "01/01/999999") in the date of birth field.
 Step 3.:Complete the rest of the Registration Form and submit.
 Step 4.:Observe that registration is successful despite the invalid date of birth.
+
+Expected Result:
+The system should reject the invalid date of birth and display an error message.
+
+Actual Result:
+The system accepts the invalid date of birth and allows the user to register.
+
+Environment:
+OS: Windows 11
+Browser: Chrome 131.0
+
 
 ## Contact
 
