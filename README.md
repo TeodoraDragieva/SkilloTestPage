@@ -17,40 +17,39 @@
 - [Contact](#contact)
 
 ## Overview
-Iskillo social networks is an online platform where users can create profiles,
-connect with friends and family.
 
-All Iskillo users can share content, and engage with
-a broader community.
+iSkillo Social Networks is an innovative online platform that allows users to create personal profiles, connect with friends and family, and engage with a global community.
 
-ISkillo have revolutionized communication,
-enabling instant sharing of information and fostering
-global connections not only in Bulgaria.
+Users can share content, interact through posts, and be part of a vibrant network that fosters communication and collaboration beyond borders, extending its impact far beyond Bulgaria.
 
-Many QA engineers are connected via the fast variety of  test automation activities performed on ISkillo.
+What makes iSkillo particularly valuable for QA engineers is its integration with diverse automation testing activities. 
+
+The platform serves as a robust environment where testers can perform a wide variety of test automation scenarios, helping to ensure seamless user experiences and uncovering potential system vulnerabilities.
 
 ## Test activities performed with Selenium 4.25 and TestNG 10 Java unit framework:
-List of the test cases.
-Registration feature:
+
+**List of the test cases.**
+
+**Registration feature:**
 - Verify user cаn registered in the system with valid data.
 - Verify user can NOT register in the system with already taken username.
 - Verify user can NOT register in the system with alerady taken password.
 
-- Login feature
+**Login feature:**
     - Verify already registered user can successfully login in the system
     - Verify already registered user can NOT successfully login in the system  with WRONG PASSWORD
     - Verify already registered user can NOT successfully login in the system  with WRONG USERNAME
     - Verify already registered user can NOT successfully login in the system  with NO CREDENTIALS
 
-- Post feature
+**Post feature:**
     - Verify  user can create a new post.
     - Verify user can delete a post.
     - Verify user can like post.
     - Verify user can dislike post.
-  - End-To-End Test
+  
+**End-To-End Test:**
     - Verify User Can Register, Login and create a post.
 
-  
 ## Installation
 
 - Clone the repository (please use this link): https://github.com/TeodoraDragieva/SkilloTestPage
@@ -59,12 +58,11 @@ Registration feature:
 
 - Make sure you have Maven version 3.0.9 and up
 
-
 ## Usage
 
 INSTALLATION:
 
-Please visit the Test Automation Framework with linK:
+Please visit the Test Automation Framework with linK: https://github.com/TeodoraDragieva/SkilloTestPage
 
 Make sure that you can clone the repository. Follow the 3 different ways to do so:
 
@@ -80,7 +78,7 @@ Tip number 2:
 
 Tip number 3:
 - Use iIntelliJ Idea Community Edition v 21.+ and from the git menu clone the project
-    - New project from VCS - > provide git repo link
+    - New project from VCS - > https://github.com/TeodoraDragieva/SkilloTestPage
     - click on 
 
 CHECK FOLDER PATHS:
@@ -96,23 +94,61 @@ When you build the project in src/test/java/gui you can find the folders created
 
 RUNNING AUTOMATION
 
-STEP 1:
+STEP 1.:
 Go with the terminal/shell/msPrompt to the folder of the project that POM.XML lives (exists).
 
-STEP 2:
+STEP 2.:
 Run command:
 
 mvn clean test
 
-STEP 3:
-
+STEP 3.:
 Wait a bit the automation to start and after the test execution a report will be generated.
 
 ## Bug report
-1. On the Registration Page the button at the end of the Registration Form should be named "Sing up", not "Sing in".
-2. On the Registation Form, when we fill the username field we receive the message "Minimum 2 characters!", but we can create Username with not less than 4 characters.
-3. On the Registation Form, when we start to type new email we do not receive message what are the requirements for the Field.
-4. The User can register with unvalid date of Birth - example with "01/01/999999".
+
+This section outlines known issues identified during testing on the iSkillo platform.
+
+1. ID:01
+Name: Incorrect Button Label
+Issue: On the Registration Page, the button at the end of the Registration Form is labeled as "Sign in" instead of "Sign up."
+Impact: This may confuse users who are completing the registration process.
+Severity: Minor
+Steps to Reproduce:
+Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
+Step 2.: Complete all required fields in the Registration Form.
+Step 3.: Observe the button label at the end of the form.
+
+2. ID:02
+Name: Inconsistent Username Validation Message
+Issue: When filling out the username field on the Registration Form, a message appears stating "Minimum 2 characters!" However, the system requires at least 4 characters for a valid username.
+Impact: Misleading validation message causes confusion for users during registration.
+Severity: Moderate
+Steps to Reproduce:
+Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
+Step 2.: Enter fewer than 4 characters in the username field.
+Step 3.: Observe the validation message displayed.
+
+3. ID:03
+Name: Missing Email Field Validation Message
+Issue: When users begin typing in the email field of the Registration Form, no validation message is displayed to indicate the email format requirements.
+Impact: Users are unaware of the expected format, increasing the likelihood of errors.
+Severity: Minor
+Steps to Reproduce:
+Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
+Step 2.: Start typing an email address in the email field.
+Step 3.: Observe the absence of a validation message.
+
+4. ID:04 
+Name: Invalid Date of Birth Acceptance
+Issue: The system allows users to register with an invalid date of birth, such as "01/01/999999."
+Impact: Leads to unrealistic or malformed user data in the system.
+Severity: Major
+Steps to Reproduce:
+Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
+Step 2.:Enter an invalid date of birth (e.g., "01/01/999999") in the date of birth field.
+Step 3.:Complete the rest of the Registration Form and submit.
+Step 4.:Observe that registration is successful despite the invalid date of birth.
 
 ## Contact
 
