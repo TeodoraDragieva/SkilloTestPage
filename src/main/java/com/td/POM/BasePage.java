@@ -109,28 +109,29 @@ public class BasePage {
 
     public int countAllPostsWithScroll() {
         By postLocator = By.cssSelector("app-post.app-post");
-        int postCount = 0;
-        int newPostCount = 0;
+        int totalPostCount = 0;
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        do {
-            postCount = driver.findElements(postLocator).size();
+        while (true) {
+            int currentPostCount = driver.findElements(postLocator).size();
+            log.info("Current post count: " + currentPostCount);
+
             scrollToBottom();
 
             try {
-                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, postCount));
+                wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(postLocator, currentPostCount));
             } catch (TimeoutException e) {
-                log.info("Reached the end of the page. Total posts: " + postCount);
+                log.info("Reached the end of the page. Total posts: " + currentPostCount);
+                totalPostCount = currentPostCount;
                 break;
             }
+        }
 
-            newPostCount = driver.findElements(postLocator).size();
-
-        } while (newPostCount > postCount);
-
-        return newPostCount;
+        log.info("Final post count returned: " + totalPostCount);
+        return totalPostCount;
     }
+
 
     public int countAllPostsWithScrollUp() {
         By postLocator = By.cssSelector("app-post.app-post");

@@ -81,35 +81,35 @@ public class VerifyUserCanRegisterLoginUpdateProfilePost extends BaseTest {
 
         loginPage.clickOnLogOutButton();
 
-        log.info("STEP 1: Not logged in user has opened the Skillo HomePage.");
+        log.info("STEP 10: Not logged in user has opened the Skillo HomePage.");
         homePage.openHomePage();
 
-        log.info("STEP 1.1.: Verify the user is on the Home Page.");
+        log.info("STEP 10.1.: Verify the user is on the Home Page.");
 
-        log.info("STEP 1.1.1.: Verify the Page Title.");
+        log.info("STEP 10.1.1.: Verify the Page Title.");
         boolean isTitleCorrect = homePage.isPageTitleCorrect();
         Assert.assertTrue(isTitleCorrect, "Page title is incorrect!");
 
-        log.info("STEP 1.1.2.: Verify that the Navigation Bar Home is presented.");
+        log.info("STEP 10.1.2.: Verify that the Navigation Bar Home is presented.");
         boolean isShownNavBarHome = homePage.isNavBarHomeLinkShown();
         Assert.assertTrue(isShownNavBarHome);
 
-        log.info("STEP 1.1.3.: Verify that the Login link is presented.");
+        log.info("STEP 10.1.3.: Verify that the Login link is presented.");
         boolean isShownNavBarLoginLink = homePage.isNavLoginShown();
         Assert.assertTrue(isShownNavBarLoginLink, "The Navigation bar Login Link is not presented!");
 
-        log.info("STEP 2: The user is navigating to the Login page via click on navigation bar Login link.");
+        log.info("STEP 11: The user is navigating to the Login page via click on navigation bar Login link.");
         homePage.clickOnNavBarLogin();
 
-        log.info("STEP 2.1.: Verify the User successfully landed on the Login Page");
+        log.info("STEP 11.1.: Verify the User successfully landed on the Login Page");
         String actualLoginFormTitle = loginPage.getLoginPageFormTitle();
         Assert.assertEquals(actualLoginFormTitle,"Sign in");
 
-        log.info("STEP 2.2. Verify that the Login Button From Login Form is presented");
+        log.info("STEP 11.2. Verify that the Login Button From Login Form is presented");
         boolean isLoginButtonVisbile = loginPage.loginButtonIsShown();
         Assert.assertTrue(isLoginButtonVisbile, "The login Button is not presented!");
 
-        log.info("STEP 11.: Log in with the saved username and password.");
+        log.info("STEP 12.: Log in with the saved username and password.");
         loginPage.provideUserName(USERNAME);
         loginPage.providePassword("123456A");
         loginPage.clickOnLoginButton();
@@ -117,56 +117,54 @@ public class VerifyUserCanRegisterLoginUpdateProfilePost extends BaseTest {
         boolean isLoginSuccessful = loginPage.isLogoutButtonShown();
         Assert.assertTrue(isLoginSuccessful, "Login was not successful!");
 
-        log.info ("STEP 5.: Verify the navigation bare Profile link is presented and click on it.");
-        homePage.clickOnNavBarProfile();
+        log.info("STEP 13.: Verify the User is navigated to the Profile Page");
 
-        log.info("STEP 6.: Verify the User is navigated to the Profile Page");
-
-        log.info("STEP 6.1.: Verify if the URL is for the Profile Page");
+        log.info ("STEP 13.1.: Verify the navigation bare Profile link is presented and click on it.");
         ProfilePage profilePage = new ProfilePage(super.driver,log);
 
-        log.info("STEP 7.: Verify there is a post - to be deleted.");
-        int initialPostCount = profilePage.countAllPostsWithScroll();
+        homePage.clickOnNavBarProfile();
 
-        log.info ("STEP 8.: The User click on navigation bar New Post link.");
+        log.info("STEP 14.: Verify are no post created.");
+        int initialPostCount = profilePage.countAllPostsWithScroll();
+        Assert.assertTrue(initialPostCount ==0, "There are post created, which is not expected behaviour.");
+
+        log.info ("STEP 15.: The User click on navigation bar New Post link.");
         homePage.clickOnNavBarNewPost();
 
-        log.info ("STEP 9.: Verify the User is on Post Page.");
+        log.info ("STEP 16.: Verify the User is on Post Page.");
         PostPage postPage = new PostPage(super.driver, log);
 
-        log.info("STEP 9.1.: Verify that the Upload Form is presented");
+        log.info("STEP 16.1.: Verify that the Upload Form is presented");
         String actualUploadFormTitle = postPage.getUploadPageFormTitle();
         Assert.assertEquals(actualUploadFormTitle,"Post a picture to share with your awesome followers");
 
-        log.info ("STEP 10.: The User is Uploading New Picture.");
+        log.info ("STEP 17.: The User is Uploading New Picture.");
         postPage.uploadPicture(postPicture);
 
-        log.info ("STEP 11.: The User is providing Post Caption.");
+        log.info ("STEP 18.: The User is providing Post Caption.");
         postPage.providePostCaption("testing");
         postPage.clickCreatePostButton();
 
-        log.info ("STEP 12.: Verify the Post is created.");
-
-        log.info ("STEP 12.1.: Click on Post.");
+        log.info ("STEP 19.: Verify the Post is created.");
         int lastPostIndex = profilePage.getLastPostIndex();
         profilePage.clickPost(lastPostIndex);
 
-        log.info ("STEP 12.2.: Verify the Image is visible in the Post Modal.");
+        log.info ("STEP 19.1.: Verify the Image is visible in the Post Modal.");
         PostModal postModal = new PostModal(super.driver, log);
         Assert.assertTrue(postModal.isImageVisible(), "The image is not visible!");
 
-        log.info("STEP 12.3.: Verify the Image name (caption) is visible in the Post Modal.");
+        log.info("STEP 19.2.: Verify the Image name (caption) is visible in the Post Modal.");
         String postCaption = postPage.getImageName();
         Assert.assertEquals(postCaption, "testing", "The caption is not presented correctly.");
 
-        log.info ("STEP 12.4.: Verify the Username is visible in the new post.");
+        log.info ("STEP 19.3.: Verify the Username is visible in the new post.");
         String postUserTxt = postModal.getPostUser();
         Assert.assertEquals(postUserTxt, USERNAME);
 
         profilePage.closePostModal();
 
         log.info ("STEP 12.5.: Verify there is one more post shown.");
-        int postFinalCount = profilePage.countAllPostsWithScroll ();
+        int postFinalCount = profilePage.countAllPostsWithScroll();
         Assert.assertTrue(postFinalCount == initialPostCount + 1, "Posts didn't increase by 1.");
 
     }
