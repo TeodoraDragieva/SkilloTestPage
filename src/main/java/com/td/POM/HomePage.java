@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BasePage {
-    public static final String HOME_PAGE_URL = "/posts/all";
+    private static final String HOME_PAGE_URL = "/posts/all";
 
     @FindBy(id = "nav-link-home")
     private WebElement navBarHome;
@@ -39,30 +39,28 @@ public class HomePage extends BasePage {
       return isPresented(navBarHome);
     }
 
-    public void clickOnNavBarHome() { waitAndClickOnWebElement(navBarHome);}
-
     public boolean isNavLoginShown() {
      return isPresented(navBarLogin);
     }
 
     public void clickOnNavBarLogin () {
-       waitAndClickOnWebElement(navBarLogin);
+       clickOn(navBarLogin);
     }
 
     public void clickOnNavBarProfile(){
-        waitAndClickOnWebElement(navBarProfile);
+        clickOn(navBarProfile);
     }
 
     public boolean isNavBarProfilePresented(){ return isPresented(navBarProfile);}
 
     public void clickOnNavBarNewPost () {
-       waitAndClickOnWebElement(navBarNewPost);
+       clickOn(navBarNewPost);
     }
 
     public void searchAndSelectMember(String memberName) {
         waitPageTobeFullyLoaded();
-        searchBar.sendKeys(memberName); // Търсене по име
-        searchBar.sendKeys(Keys.ENTER); // Потвърждение на търсенето
+        searchBar.sendKeys(memberName);
+        searchBar.sendKeys(Keys.ENTER);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.post-user[href=\"/users/9099\"]")));
         log.info("Search result is displayed for: " + memberName);
@@ -70,6 +68,6 @@ public class HomePage extends BasePage {
 
     public void clickOnUserProfileFoundAfterSearching () {
         isPresented(userNameFoundAfterSearch);
-        waitAndClickOnWebElement(userNameFoundAfterSearch);}
+        clickOn(userNameFoundAfterSearch);}
 }
 

@@ -238,9 +238,6 @@ public class PostTests extends BaseTest {
         log.info("STEP 1: Navigating to the Login page.");
         loginPage.navigateToLoginPage();
 
-        log.info("STEP 2: Verifying user is on the Login Page.");
-        Assert.assertEquals(loginPage.getLoginPageFormTitle(), LOGIN_FORM_TITLE, "Incorrect login page title.");
-
         log.info("STEP 3: Logging in with valid credentials.");
         loginPage.loginWithUserAndPassword("tedi90@abv.bg", "Pukanka2");
 

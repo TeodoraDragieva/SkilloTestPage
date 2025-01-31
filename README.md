@@ -79,7 +79,7 @@ Tip number 2:
 Tip number 3:
 - Use iIntelliJ Idea Community Edition v 21.+ and from the git menu clone the project
     - New project from VCS - > https://github.com/TeodoraDragieva/SkilloTestPage
-    - click on 
+   - save the Project at your preferable location.
 
 CHECK FOLDER PATHS:
 
@@ -139,7 +139,9 @@ Impact: Misleading validation message causes confusion for users during registra
 Severity: Moderate
 Steps to Reproduce:
 Step 1.: Navigate to the Registration Page: http://training.skillo-bg.com:4300/users/register
+
 Step 2.: Enter fewer than 4 characters in the username field.
+
 Step 3.: Observe the validation message displayed.
 
 Expected Result:

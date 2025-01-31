@@ -4,11 +4,8 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class ProfilePage extends BasePage {
@@ -40,19 +37,19 @@ public class ProfilePage extends BasePage {
     }
 
     public void clickOnLikeButton() {
-        waitAndClickOnWebElement(likeButton);
+        clickOn(likeButton);
     }
 
     public void clickOnUserWithUploadedPic() {
-        waitAndClickOnWebElement(selectUserProfile38);
+        clickOn(selectUserProfile38);
     }
 
     public void clickOnYesButton() {
-        waitAndClickOnWebElement(areYouSureYesButton);
+        clickOn(areYouSureYesButton);
     }
 
     public void clickOnDeleteButton() {
-        waitAndClickOnWebElement(deletePostButton);
+        clickOn(deletePostButton);
     }
 
     public int getPostCount() {
@@ -95,7 +92,7 @@ public class ProfilePage extends BasePage {
     }
 
     public void closePostModal() {
-        waitAndClickOnWebElement(userProfileLink);
+        clickOn(userProfileLink);
     }
 
 }

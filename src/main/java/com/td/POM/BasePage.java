@@ -18,7 +18,7 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    public void waitAndClickOnWebElement(WebElement elm) {
+    public void clickOn(WebElement elm) {
         wait.until(ExpectedConditions.visibilityOf(elm));
         wait.until(ExpectedConditions.elementToBeClickable(elm));
         elm.click();
@@ -31,7 +31,6 @@ public class BasePage {
         textField.sendKeys(inputText);
 
         for (int i = 0; i < 3; i++) {
-            Object ElementText = null;
             if (inputText.equals(textField.getText())) {
                 log.info("Text field successfully populated with: " + inputText);
                 return;

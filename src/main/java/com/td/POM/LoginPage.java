@@ -8,11 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.NoSuchElementException;
-import java.util.concurrent.TimeoutException;
 
 public class LoginPage extends BasePage {
-   public static final String LOGIN_PAGE = "/users/login";
-    public static final String LOGIN_FORM_TITLE = "Sign in";
+   private static final String LOGIN_PAGE = "/users/login";
+    private static final String LOGIN_FORM_TITLE = "Sign in";
 
     @FindBy(css = "p.h4")
     private WebElement loginFormHeaderTitle;
@@ -49,7 +48,11 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnLoginButton(){
-        waitAndClickOnWebElement(loginFormSubmitButton);
+        clickOn(loginFormSubmitButton);
+    }
+
+    public void loginWithIskilloUser() {
+
     }
 
     public boolean loginButtonIsShown(){
@@ -59,7 +62,7 @@ public class LoginPage extends BasePage {
     public void loginWithUserAndPassword(String user, String password){
         provideUserName(user);
         providePassword(password);
-        clickOnLoginButton();
+        clickOn(loginFormSubmitButton);
     }
 
     public String getLoginPageFormTitle(){
@@ -84,7 +87,7 @@ public class LoginPage extends BasePage {
     }
 
    public void clickOnLogOutButton () {
-        waitAndClickOnWebElement(logoutButton);
+        clickOn(logoutButton);
    }
 
     public boolean isPageTitleCorrect() {
